@@ -1,6 +1,9 @@
 Bumplus
 =======
 
+.. image:: https://travis-ci.org/dochang/bumplus.svg?branch=master
+    :target: https://travis-ci.org/dochang/bumplus
+
 Bumplus is a command line tool to bump your project version.
 
 Prerequisites
