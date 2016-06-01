@@ -5,6 +5,7 @@
 ### Fixed
 
   - Fix change log
+  - Fix README.rst for PyPI
 
 ## [0.0.1] - 2016-06-01
 
