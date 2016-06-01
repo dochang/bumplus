@@ -32,7 +32,7 @@ long_description = re.sub(
 
 setup(
     name='bumplus',
-    version='0.0.1',
+    version='0.0.2',
     author='Desmond O. Chang',
     author_email='dochang@gmail.com',
     license='MIT',
