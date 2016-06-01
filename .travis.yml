@@ -1,0 +1,15 @@
+language: python
+
+env:
+  - TOXENV=py26
+  - TOXENV=py27
+  - TOXENV=py33
+  - TOXENV=py34
+  #- TOXENV=py35
+# Disable py35 because of travis-ci/travis-ci#4794
+
+install:
+  - pip install --upgrade tox
+
+script:
+  - tox
