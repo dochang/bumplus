@@ -7,6 +7,10 @@ Bumplus
 .. image:: https://badge.fury.io/py/bumplus.svg
     :target: https://badge.fury.io/py/bumplus
 
+.. image:: https://requires.io/github/dochang/bumplus/requirements.svg?branch=master
+    :target: https://requires.io/github/dochang/bumplus/requirements/?branch=master
+    :alt: Requirements Status
+
 Bumplus is a command line tool to bump your project version.
 
 Prerequisites

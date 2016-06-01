@@ -5,6 +5,7 @@
 ### Added
 
   - Add PyPI badge
+  - Add requires.io badge
 
 ## [0.0.2] - 2016-06-01
 
