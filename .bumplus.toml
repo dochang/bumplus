@@ -17,3 +17,12 @@ replace = """
 
 ## [{{new_version}}] - {{utcnow | strftime('%Y-%m-%d')}}
 """
+
+[[files."CHANGELOG.md"]]
+search = """
+[Unreleased]: https://github.com/dochang/bumplus/compare/{{old_version}}...HEAD
+"""
+replace = """
+[Unreleased]: https://github.com/dochang/bumplus/compare/{{new_version}}...HEAD
+[{{new_version}}]: https://github.com/dochang/bumplus/compare/{{old_version}}...{{new_version}}
+"""
