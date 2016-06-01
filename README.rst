@@ -4,6 +4,9 @@ Bumplus
 .. image:: https://travis-ci.org/dochang/bumplus.svg?branch=master
     :target: https://travis-ci.org/dochang/bumplus
 
+.. image:: https://badge.fury.io/py/bumplus.svg
+    :target: https://badge.fury.io/py/bumplus
+
 Bumplus is a command line tool to bump your project version.
 
 Prerequisites
