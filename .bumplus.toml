@@ -1,0 +1,19 @@
+version = "0.0.1"
+
+[[files."setup.py"]]
+search = "{{old_version}}"
+replace = "{{new_version}}"
+
+[[files."bumplus/version.py"]]
+search = "{{old_version}}"
+replace = "{{new_version}}"
+
+[[files."CHANGELOG.md"]]
+search = """
+## [Unreleased]
+"""
+replace = """
+## [Unreleased]
+
+## [{{new_version}}] - {{utcnow | strftime('%Y-%m-%d')}}
+"""
