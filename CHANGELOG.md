@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Generate code coverage report
+
 ## [0.0.3] - 2016-06-01
 
 ### Added
