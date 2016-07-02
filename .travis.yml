@@ -9,7 +9,10 @@ env:
 # Disable py35 because of travis-ci/travis-ci#4794
 
 install:
-  - pip install --upgrade tox
+  - pip install --upgrade tox codecov
 
 script:
   - tox
+
+after_success:
+  - codecov

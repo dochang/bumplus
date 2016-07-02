@@ -5,6 +5,7 @@
 ### Added
 
   - Generate code coverage report
+  - Upload code coverage report to codecov.io
 
 ## [0.0.3] - 2016-06-01
 
