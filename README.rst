@@ -4,6 +4,10 @@ Bumplus
 .. image:: https://travis-ci.org/dochang/bumplus.svg?branch=master
     :target: https://travis-ci.org/dochang/bumplus
 
+.. image:: https://codecov.io/gh/dochang/bumplus/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/dochang/bumplus
+    :alt: Codecov
+
 .. image:: https://badge.fury.io/py/bumplus.svg
     :target: https://badge.fury.io/py/bumplus
 
