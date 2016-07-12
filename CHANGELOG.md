@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+  - Provide url meta-data for the setup script
+
 ## [0.0.4] - 2016-07-02
 
 ### Added
