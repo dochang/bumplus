@@ -1,12 +1,14 @@
 language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+sudo: false
 
 env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  #- TOXENV=py35
-# Disable py35 because of travis-ci/travis-ci#4794
+  - TOXENV=py
 
 install:
   - pip install --upgrade tox codecov

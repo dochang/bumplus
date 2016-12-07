@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Python 3.5 support for Travis CI
+
 ## [0.0.6] - 2016-07-24
 
 ### Added
