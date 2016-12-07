@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.0.7] - 2016-12-07
+
 ### Added
 
   - Python 3.5 support for Travis CI
@@ -45,7 +47,8 @@
 
   - Initial release
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.0.6...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.0.7...HEAD
+[0.0.7]: https://github.com/dochang/bumplus/compare/0.0.6...0.0.7
 [0.0.6]: https://github.com/dochang/bumplus/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/dochang/bumplus/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/dochang/bumplus/compare/0.0.3...0.0.4
