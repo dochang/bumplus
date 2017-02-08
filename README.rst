@@ -15,6 +15,10 @@ Bumplus
     :target: https://requires.io/github/dochang/bumplus/requirements/?branch=master
     :alt: Requirements Status
 
+.. image:: https://img.shields.io/badge/say-thanks-green.svg
+    :target: https://saythanks.io/to/dochang
+    :alt: Say Thanks!
+
 Bumplus is a command line tool to bump your project version.
 
 Prerequisites

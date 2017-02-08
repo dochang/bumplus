@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Add saythanks.io badge
+
 ## [0.0.7] - 2016-12-07
 
 ### Added
