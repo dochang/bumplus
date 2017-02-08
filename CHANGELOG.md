@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.0.8] - 2017-02-08
+
 ### Added
 
   - Add saythanks.io badge
@@ -51,7 +53,8 @@
 
   - Initial release
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.0.7...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.0.8...HEAD
+[0.0.8]: https://github.com/dochang/bumplus/compare/0.0.7...0.0.8
 [0.0.7]: https://github.com/dochang/bumplus/compare/0.0.6...0.0.7
 [0.0.6]: https://github.com/dochang/bumplus/compare/0.0.5...0.0.6
 [0.0.5]: https://github.com/dochang/bumplus/compare/0.0.4...0.0.5

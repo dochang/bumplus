@@ -32,7 +32,7 @@ long_description = re.sub(
 
 setup(
     name='bumplus',
-    version='0.0.7',
+    version='0.0.8',
     url='https://github.com/dochang/bumplus',
     author='Desmond O. Chang',
     author_email='dochang@gmail.com',
