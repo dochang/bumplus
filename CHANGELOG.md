@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Add compatibility code
+
 ## [0.0.8] - 2017-02-08
 
 ### Added

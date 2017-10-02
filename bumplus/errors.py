@@ -1,3 +1,6 @@
+from __future__ import absolute_import, division, print_function
+__metaclass__ = type
+
 from .constants import CONF_FILE
 
 class BumplusError(Exception):
