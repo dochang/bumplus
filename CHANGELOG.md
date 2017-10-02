@@ -5,6 +5,7 @@
 ### Added
 
   - Add compatibility code
+  - Python 3.6 support for Travis CI
 
 ## [0.0.8] - 2017-02-08
 
