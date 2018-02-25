@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Removed
+
+  - Python 2.6 support
+  - Python 3.3 support
+
 ## [0.0.9] - 2017-10-02
 
 ### Added
