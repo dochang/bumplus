@@ -103,3 +103,9 @@ venv.bak/
 
 
 # End of https://www.gitignore.io/api/python
+
+
+# Ignore Pipfile.lock
+#
+# https://github.com/pypa/pipenv/commit/ab20b514f5a2d207bce4a6e76929c1c1178db992
+Pipfile.lock
