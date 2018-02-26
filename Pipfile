@@ -13,6 +13,7 @@ codecov = "*"
 twine = "*"
 tox = "*"
 "flake8" = "*"
+pytest-runner = "*"
 
 
 [packages]

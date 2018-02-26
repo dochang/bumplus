@@ -74,8 +74,9 @@ setup(
         'pytoml',
         'Jinja2',
     ],
-    tests_require=['tox'],
+    setup_requires=['pytest-runner'],
+    tests_require=['pytest', 'tox'],
     cmdclass={
-        'test': Tox,
+        'tox': Tox,
     },
 )

@@ -11,6 +11,7 @@
 
   - Migrate from tox to pipenv
   - Use tox for local testing only
+  - Integrate pytest and setup.py
 
 ### Removed
 
