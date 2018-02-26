@@ -1,6 +1,8 @@
 from __future__ import absolute_import, division, print_function
 __metaclass__ = type
 
+import os
+import codecs
 import re
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
@@ -27,11 +29,14 @@ class Tox(TestCommand):
 
 description = 'Bump the version in the project files.'
 
-long_description = re.sub(
-  "\`(.*)\<#.*\>\`\_",
-  r"\1",
-  open('README.rst').read()
-)
+here = os.path.abspath(os.path.dirname(__file__))
+
+with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
+    long_description = re.sub(
+        "\`(.*)\<#.*\>\`\_",
+        r"\1",
+        f.read()
+    )
 
 setup(
     name='bumplus',
