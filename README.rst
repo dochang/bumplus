@@ -8,12 +8,36 @@ Bumplus
     :target: https://codecov.io/gh/dochang/bumplus
     :alt: Codecov
 
+.. image:: https://img.shields.io/pypi/l/bumplus.svg
+    :alt: PyPI - License
+    :target: https://pypi.python.org/pypi/bumplus
+
+.. image:: https://img.shields.io/pypi/wheel/bumplus.svg
+    :alt: PyPI - Wheel
+    :target: https://pypi.python.org/pypi/bumplus
+
+.. image:: https://img.shields.io/pypi/format/bumplus.svg
+    :alt: PyPI - Format
+    :target: https://pypi.python.org/pypi/bumplus
+
+.. image:: https://img.shields.io/pypi/pyversions/bumplus.svg
+    :alt: PyPI - Python Version
+    :target: https://pypi.python.org/pypi/bumplus
+
 .. image:: https://badge.fury.io/py/bumplus.svg
     :target: https://badge.fury.io/py/bumplus
 
 .. image:: https://requires.io/github/dochang/bumplus/requirements.svg?branch=master
     :target: https://requires.io/github/dochang/bumplus/requirements/?branch=master
     :alt: Requirements Status
+
+.. image:: https://pyup.io/repos/github/dochang/bumplus/shield.svg
+    :target: https://pyup.io/repos/github/dochang/bumplus/
+    :alt: Updates
+
+.. image:: https://pyup.io/repos/github/dochang/bumplus/python-3-shield.svg
+    :target: https://pyup.io/repos/github/dochang/bumplus/
+    :alt: Python 3
 
 .. image:: https://img.shields.io/badge/say-thanks-green.svg
     :target: https://saythanks.io/to/dochang

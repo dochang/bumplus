@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Add badges
+
 ## [0.1.1] - 2018-02-27
 
 ### Changed
