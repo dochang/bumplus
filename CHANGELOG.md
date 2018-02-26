@@ -5,6 +5,7 @@
 ### Added
 
   - PyPI classifiers
+  - Use flake8 to check source code
 
 ### Changed
 

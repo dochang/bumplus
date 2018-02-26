@@ -12,6 +12,7 @@ pytest-cov = "*"
 codecov = "*"
 twine = "*"
 tox = "*"
+"flake8" = "*"
 
 
 [packages]
