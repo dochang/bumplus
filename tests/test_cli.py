@@ -7,6 +7,7 @@ from textwrap import dedent
 
 import bumplus
 
+
 class TestCLI:
 
     def test_not_bumplus_dir(self, tmpdir):

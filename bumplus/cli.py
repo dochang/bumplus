@@ -12,8 +12,10 @@ from .version import __version__
 
 logger = logging.getLogger(__package__)
 
+
 def is_fs_root(path):
     return path == '/'
+
 
 def find_bumplus_topdir(path):
     found = is_bumplus_dir(path)
@@ -23,6 +25,7 @@ def find_bumplus_topdir(path):
     if found:
         return path
     raise NotBumplusDir()
+
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description='Bump version.')

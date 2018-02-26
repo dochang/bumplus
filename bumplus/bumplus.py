@@ -8,11 +8,12 @@ import logging
 import jinja2
 from datetime import datetime
 
-from .utils import bumplus_conf_file, check_bumplus_dir, load_config, dump_config
+from .utils import bumplus_conf_file, check_bumplus_dir, load_config
 from .filters import filters
 from .constants import CONF_FILE
 
 logger = logging.getLogger(__package__)
+
 
 class Bumplus(object):
 
@@ -31,9 +32,10 @@ class Bumplus(object):
         with open(path) as f:
             content_after = content_before = f.read()
         for file_config in file_config_list:
-            search_tmpl = self.template_env.from_string(file_config['search'])
+            tenv = self.template_env
+            search_tmpl = tenv.from_string(file_config['search'])
             search = search_tmpl.render(self.context)
-            replace_tmpl = self.template_env.from_string(file_config['replace'])
+            replace_tmpl = tenv.from_string(file_config['replace'])
             replace = replace_tmpl.render(self.context)
             content_after = content_after.replace(search, replace)
         if content_before != content_after:

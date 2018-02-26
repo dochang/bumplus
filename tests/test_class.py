@@ -7,16 +7,17 @@ from textwrap import dedent
 
 import bumplus
 
+
 class TestClass:
 
     def test_not_bumplus_dir(self, tmpdir):
         with pytest.raises(bumplus.NotBumplusDir):
-            bp = bumplus.Bumplus(str(tmpdir))
+            bumplus.Bumplus(str(tmpdir))
 
     def test_version_not_defined(self, tmpdir):
         tmpdir.join('.bumplus.toml').ensure()
         with pytest.raises(bumplus.VersionNotDefined):
-            bp = bumplus.Bumplus(str(tmpdir))
+            bumplus.Bumplus(str(tmpdir))
 
     def test_create_bumplus_object(self, tmpdir):
         tmpdir.join('.bumplus.toml').write(dedent('''
