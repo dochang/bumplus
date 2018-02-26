@@ -6,14 +6,12 @@ python:
   - "3.6"
 sudo: false
 
-env:
-  - TOXENV=py
-
 install:
-  - pip install --upgrade tox codecov
+  - pip install --upgrade pipenv
+  - pipenv install --dev
 
 script:
-  - tox
+  - pipenv run pytest --cov
 
 after_success:
-  - codecov
+  - pipenv run codecov
