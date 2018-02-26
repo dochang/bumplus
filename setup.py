@@ -42,6 +42,14 @@ setup(
     license='MIT',
     description=description,
     long_description=long_description,
+    classifiers=[
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+    ],
     packages=['bumplus'],
     entry_points={
         'console_scripts': [

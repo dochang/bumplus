@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - PyPI classifiers
+
 ### Changed
 
   - Migrate from tox to pipenv
