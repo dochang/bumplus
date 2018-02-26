@@ -38,9 +38,13 @@ with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
         f.read()
     )
 
+about = {}
+with open(os.path.join(here, 'bumplus', 'version.py')) as f:
+    exec(f.read(), about)
+
 setup(
     name='bumplus',
-    version='0.0.9',
+    version=about['__version__'],
     url='https://github.com/dochang/bumplus',
     author='Desmond O. Chang',
     author_email='dochang@gmail.com',
