@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Changed
+
+  - Migrate from tox to pipenv
+  - Use tox for local testing only
+
 ### Removed
 
   - Python 2.6 support
