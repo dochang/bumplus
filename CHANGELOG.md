@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+  - Build universal wheel
+
 ## [0.1.0] - 2018-02-27
 
 ### Added
