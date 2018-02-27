@@ -1,0 +1,4 @@
+pin: False
+
+requirements:
+  - Pipfile
