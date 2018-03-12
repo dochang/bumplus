@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.1.3] - 2018-03-12
+
 ### Changed
 
   - Cache pip files when testing on Travis CI
@@ -95,7 +97,8 @@
 
   - Initial release
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.1.2...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.1.3...HEAD
+[0.1.3]: https://github.com/dochang/bumplus/compare/0.1.2...0.1.3
 [0.1.2]: https://github.com/dochang/bumplus/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/dochang/bumplus/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/dochang/bumplus/compare/0.0.9...0.1.0
