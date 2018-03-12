@@ -5,6 +5,8 @@ python:
   - "3.5"
   - "3.6"
 sudo: false
+cache:
+  pip: true
 
 install:
   - pip install --upgrade pipenv

@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+  - Cache pip files when testing on Travis CI
+
 ## [0.1.2] - 2018-02-27
 
 ### Added
