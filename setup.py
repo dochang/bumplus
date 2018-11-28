@@ -89,7 +89,7 @@ description = 'Bump the version in the project files.'
 
 with codecs.open('README.rst', encoding='utf-8') as f:
     long_description = re.sub(
-        "\`(.*)\<#.*\>\`\_",
+        r"\`(.*)\<#.*\>\`\_",
         r"\1",
         f.read()
     )

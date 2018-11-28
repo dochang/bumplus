@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+  - Fix style error
+
 ## [0.1.3] - 2018-03-12
 
 ### Changed
