@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+  - Add Python 3.7 support in README
+
 ## [0.1.5] - 2018-11-28
 
 ### Added
