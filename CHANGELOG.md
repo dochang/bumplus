@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Add Python 3.7 support
+
 ## [0.1.4] - 2018-11-28
 
 ### Changed
