@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+  - Migrate from Travis to Drone
+
 ## [0.1.6] - 2018-11-28
 
 ### Fixed
