@@ -13,6 +13,10 @@ dist: xenial
 cache:
   pip: true
 
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+
 install:
   - pip install --upgrade pipenv
   - pipenv install --dev
