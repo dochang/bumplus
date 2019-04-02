@@ -11,6 +11,10 @@
 
   - Migrate from Travis to Drone
 
+### Removed
+
+  - Python 3.4 support
+
 ## [0.1.6] - 2018-11-28
 
 ### Fixed

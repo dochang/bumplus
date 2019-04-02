@@ -53,7 +53,7 @@ local test_in_py(py_ver) = {
   ],
 };
 
-std.map(test_in_py, ['2.7', '3.4', '3.5', '3.6', '3.7']) + [
+std.map(test_in_py, ['2.7', '3.5', '3.6', '3.7']) + [
   {
     kind: 'secret',
     name: 'codecov-upload-token',
