@@ -1,6 +1,10 @@
 Bumplus
 =======
 
+.. image:: https://cloud.drone.io/api/badges/dochang/bumplus/status.svg
+    :target: https://cloud.drone.io/dochang/bumplus
+    :alt: Build Status
+
 .. image:: https://travis-ci.org/dochang/bumplus.svg?branch=master
     :target: https://travis-ci.org/dochang/bumplus
 
