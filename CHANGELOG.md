@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Test with black
+
 ### Changed
 
   - Migrate from Travis to Drone
