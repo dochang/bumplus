@@ -5,6 +5,7 @@
 ### Added
 
   - Test with black
+  - Test with isort
 
 ### Changed
 
