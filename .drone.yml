@@ -6,7 +6,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
-            "pipenv install --dev",
+            "pipenv install --dev --skip-lock",
             "pipenv run flake8",
             "pipenv run pytest --cov"
          ],
@@ -35,59 +35,6 @@
          },
          "failure": "ignore",
          "image": "python:2.7",
-         "name": "codecov",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      }
-   ],
-   "volumes": [
-      {
-         "name": "pip-cache",
-         "temp": { }
-      }
-   ]
-}
----
-{
-   "kind": "pipeline",
-   "name": "python3.4",
-   "steps": [
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv install --dev",
-            "pipenv run flake8",
-            "pipenv run pytest --cov"
-         ],
-         "environment": {
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "image": "python:3.4",
-         "name": "test",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      },
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
-         ],
-         "environment": {
-            "CODECOV_TOKEN": {
-               "from_secret": "codecov-upload-token"
-            },
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "failure": "ignore",
-         "image": "python:3.4",
          "name": "codecov",
          "volumes": [
             {
@@ -112,7 +59,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
-            "pipenv install --dev",
+            "pipenv install --dev --skip-lock",
             "pipenv run flake8",
             "pipenv run pytest --cov"
          ],
@@ -165,7 +112,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
-            "pipenv install --dev",
+            "pipenv install --dev --skip-lock",
             "pipenv run flake8",
             "pipenv run pytest --cov"
          ],
@@ -218,7 +165,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
-            "pipenv install --dev",
+            "pipenv install --dev --skip-lock",
             "pipenv run flake8",
             "pipenv run pytest --cov"
          ],
