@@ -1,76 +1,96 @@
 from __future__ import absolute_import, division, print_function
-__metaclass__ = type
-
-import pytest
 
 from textwrap import dedent
 
+import pytest
+
 import bumplus
+
+__metaclass__ = type
 
 
 class TestClass:
-
     def test_not_bumplus_dir(self, tmpdir):
         with pytest.raises(bumplus.NotBumplusDir):
             bumplus.Bumplus(str(tmpdir))
 
     def test_version_not_defined(self, tmpdir):
-        tmpdir.join('.bumplus.toml').ensure()
+        tmpdir.join(".bumplus.toml").ensure()
         with pytest.raises(bumplus.VersionNotDefined):
             bumplus.Bumplus(str(tmpdir))
 
     def test_create_bumplus_object(self, tmpdir):
-        tmpdir.join('.bumplus.toml').write(dedent('''
+        tmpdir.join(".bumplus.toml").write(
+            dedent(
+                """
         version = '1.2.3'
-        '''))
+        """
+            )
+        )
         bp = bumplus.Bumplus(str(tmpdir))
         assert bp.path == str(tmpdir)
-        assert bp.config == {
-            'version': '1.2.3',
-        }
+        assert bp.config == {"version": "1.2.3"}
 
     def test_bump_version(self, tmpdir):
-        tmpdir.join('.bumplus.toml').write(dedent('''
+        tmpdir.join(".bumplus.toml").write(
+            dedent(
+                """
         version = '1.2.3'
         [[files.foo]]
         search = '{{old_version}}'
         replace = '{{new_version}}'
-        '''))
-        tmpdir.join('foo').write('1.2.3')
+        """
+            )
+        )
+        tmpdir.join("foo").write("1.2.3")
         bp = bumplus.Bumplus(str(tmpdir))
-        bp.bump_version('1.2.4')
-        assert tmpdir.join('foo').read() == '1.2.4'
-        assert tmpdir.join('.bumplus.toml').read() == dedent('''
+        bp.bump_version("1.2.4")
+        assert tmpdir.join("foo").read() == "1.2.4"
+        assert tmpdir.join(".bumplus.toml").read() == dedent(
+            """
         version = '1.2.4'
         [[files.foo]]
         search = '{{old_version}}'
         replace = '{{new_version}}'
-        ''')
+        """
+        )
 
     def test_bump_version_multi_line(self, tmpdir):
 
-        tmpdir.join('.bumplus.toml').write(dedent("""
+        tmpdir.join(".bumplus.toml").write(
+            dedent(
+                """
         version = '1.2.3'
         [[files.foo]]
         search = '{{old_version}}'
         replace = '''{{new_version}}
         {{old_version}}'''
-        """))
-        tmpdir.join('foo').write(dedent('''
+        """
+            )
+        )
+        tmpdir.join("foo").write(
+            dedent(
+                """
         1.2.3
-        '''))
+        """
+            )
+        )
 
         bp = bumplus.Bumplus(str(tmpdir))
-        bp.bump_version('1.2.4')
+        bp.bump_version("1.2.4")
 
-        assert tmpdir.join('foo').read() == dedent('''
+        assert tmpdir.join("foo").read() == dedent(
+            """
         1.2.4
         1.2.3
-        ''')
+        """
+        )
 
     def test_bump_version_multi_pattern(self, tmpdir):
 
-        tmpdir.join('.bumplus.toml').write(dedent("""
+        tmpdir.join(".bumplus.toml").write(
+            dedent(
+                """
         version = '1.2.3'
 
         [[files.foo]]
@@ -94,8 +114,12 @@ class TestClass:
         [Unreleased]: <change log url HEAD>
         [{{new_version}}]: <change log url {{new_version}}>
         '''
-        """))
-        tmpdir.join('foo').write(dedent('''
+        """
+            )
+        )
+        tmpdir.join("foo").write(
+            dedent(
+                """
         CHANGELOG
         =========
 
@@ -113,12 +137,15 @@ class TestClass:
 
         [Unreleased]: <change log url HEAD>
         [1.2.3]: <change log url 1.2.3>
-        '''))
+        """
+            )
+        )
 
         bp = bumplus.Bumplus(str(tmpdir))
-        bp.bump_version('1.2.4')
+        bp.bump_version("1.2.4")
 
-        assert tmpdir.join('foo').read() == dedent('''
+        assert tmpdir.join("foo").read() == dedent(
+            """
         CHANGELOG
         =========
 
@@ -140,11 +167,14 @@ class TestClass:
         [Unreleased]: <change log url HEAD>
         [1.2.4]: <change log url 1.2.4>
         [1.2.3]: <change log url 1.2.3>
-        ''')
+        """
+        )
 
     def test_bump_version_multi_file(self, tmpdir):
 
-        tmpdir.join('.bumplus.toml').write(dedent('''
+        tmpdir.join(".bumplus.toml").write(
+            dedent(
+                """
         version = '1.2.3'
         [[files.foo]]
         search = '{{old_version}}'
@@ -152,12 +182,14 @@ class TestClass:
         [[files.bar]]
         search = '{{old_version}}'
         replace = '{{new_version}}'
-        '''))
-        tmpdir.join('foo').write(dedent('1.2.3'))
-        tmpdir.join('bar').write(dedent('1.2.3'))
+        """
+            )
+        )
+        tmpdir.join("foo").write(dedent("1.2.3"))
+        tmpdir.join("bar").write(dedent("1.2.3"))
 
         bp = bumplus.Bumplus(str(tmpdir))
-        bp.bump_version('1.2.4')
+        bp.bump_version("1.2.4")
 
-        assert tmpdir.join('foo').read() == '1.2.4'
-        assert tmpdir.join('bar').read() == '1.2.4'
+        assert tmpdir.join("foo").read() == "1.2.4"
+        assert tmpdir.join("bar").read() == "1.2.4"
