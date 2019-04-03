@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2019-04-03
+
 ### Added
 
   - Test with black
@@ -129,7 +131,8 @@
 
   - Initial release
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.1.6...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/dochang/bumplus/compare/0.1.6...0.2.0
 [0.1.6]: https://github.com/dochang/bumplus/compare/0.1.5...0.1.6
 [0.1.5]: https://github.com/dochang/bumplus/compare/0.1.4...0.1.5
 [0.1.4]: https://github.com/dochang/bumplus/compare/0.1.3...0.1.4
