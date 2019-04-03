@@ -6,6 +6,7 @@
 
   - Test with black
   - Test with isort
+  - Test with bugbear
 
 ### Changed
 

@@ -17,6 +17,7 @@ pytest-runner = "*"
 flake8-black = {version = "*",markers = "python_version >= '3.6'"}
 isort = {version = "*",extras = ["requirements", "pipfile", "pyproject"],markers = "python_version >= '3.4'"}
 flake8-isort = {version = "*",markers = "python_version >= '3.4'"}
+flake8-bugbear = {version = "*",markers = "python_version >= '3.5'"}
 
 
 [packages]
