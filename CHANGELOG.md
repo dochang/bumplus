@@ -5,6 +5,7 @@
 ### Added
 
   - Test for Python 3.8 & 3.9
+  - Github Actions CI
 
 ### Fixed
 
