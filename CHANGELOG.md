@@ -5,6 +5,7 @@
 ### Fixed
 
   - Specify python version for pipenv
+  - Fix flake8-isort errors I003 & I001
 
 ## [0.2.0] - 2019-04-03
 
