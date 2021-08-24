@@ -76,7 +76,7 @@ setup(
     name="bumplus",
     version=about["__version__"],
     url="https://github.com/dochang/bumplus",
-    author="Desmond O. Chang",
+    author="Wade Zhang",
     author_email="dochang@gmail.com",
     license="MIT",
     description=description,

@@ -8,6 +8,10 @@
   - Github Actions CI
   - Github Actions badge
 
+### Changed
+
+  - Pseudonym of the author
+
 ### Fixed
 
   - Specify python version for pipenv
