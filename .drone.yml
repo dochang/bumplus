@@ -6,6 +6,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
+            "pipenv --python 2.7",
             "pipenv install --dev --skip-lock",
             "pipenv run python setup.py lint",
             "pipenv run python setup.py test --addopts --cov"
@@ -59,6 +60,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
+            "pipenv --python 3.5",
             "pipenv install --dev --skip-lock",
             "pipenv run python setup.py lint",
             "pipenv run python setup.py test --addopts --cov"
@@ -112,6 +114,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
+            "pipenv --python 3.6",
             "pipenv install --dev --skip-lock",
             "pipenv run python setup.py lint",
             "pipenv run python setup.py test --addopts --cov"
@@ -165,6 +168,7 @@
       {
          "commands": [
             "pip install --upgrade pipenv",
+            "pipenv --python 3.7",
             "pipenv install --dev --skip-lock",
             "pipenv run python setup.py lint",
             "pipenv run python setup.py test --addopts --cov"

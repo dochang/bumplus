@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+  - Specify python version for pipenv
+
 ## [0.2.0] - 2019-04-03
 
 ### Added

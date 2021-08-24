@@ -20,6 +20,7 @@ local test_in_py(py_ver) = {
       name: 'test',
       commands: [
         'pip install --upgrade pipenv',
+        'pipenv --python %s' % py_ver,
         'pipenv install --dev --skip-lock',
         // It seems that `pipenv lock` does not understand markers.  We have to
         // `--skip-lock`.
