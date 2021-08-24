@@ -6,6 +6,7 @@
 
   - Test for Python 3.8 & 3.9
   - Github Actions CI
+  - Github Actions badge
 
 ### Fixed
 
@@ -15,6 +16,7 @@
 ### Removed
 
   - Remove deprecated setuptools entrypoints
+  - Travis badge
 
 ## [0.2.0] - 2019-04-03
 
