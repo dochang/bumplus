@@ -10,7 +10,6 @@ from shutil import rmtree
 from subprocess import call
 
 from setuptools import Command, setup
-from setuptools.command.test import test as TestCommand
 
 __metaclass__ = type
 
@@ -21,31 +20,6 @@ os.chdir(here)
 
 def status(s):
     print("\033[1m{0}\033[0m".format(s))
-
-
-class Tox(TestCommand):
-    user_options = [("tox-args=", "a", "Arguments to pass to tox")]
-
-    def initialize_options(self):
-        TestCommand.initialize_options(self)
-        self.tox_args = None
-
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        # import here, cause outside the eggs aren't loaded
-        import shlex
-
-        import tox
-
-        args = self.tox_args
-        if args:
-            args = shlex.split(self.tox_args)
-        errno = tox.cmdline(args=args)
-        sys.exit(errno)
 
 
 class CleanCommand(Command):
@@ -118,7 +92,5 @@ setup(
     packages=["bumplus"],
     entry_points={"console_scripts": ["bumplus = bumplus:main"]},
     install_requires=["pytoml", "Jinja2"],
-    setup_requires=["pytest-runner"],
-    tests_require=["pytest", "tox"],
-    cmdclass={"tox": Tox, "clean": CleanCommand, "upload": UploadCommand},
+    cmdclass={"clean": CleanCommand, "upload": UploadCommand},
 )

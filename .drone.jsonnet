@@ -24,8 +24,8 @@ local test_in_py(py_ver) = {
         'pipenv install --dev --skip-lock',
         // It seems that `pipenv lock` does not understand markers.  We have to
         // `--skip-lock`.
-        'pipenv run python setup.py lint',
-        'pipenv run python setup.py test --addopts --cov',
+        'pipenv run flake8',
+        'pipenv run pytest',
       ],
     },
     base_step(py_ver) + {

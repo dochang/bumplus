@@ -8,8 +8,8 @@
             "pip install --upgrade pipenv",
             "pipenv --python 2.7",
             "pipenv install --dev --skip-lock",
-            "pipenv run python setup.py lint",
-            "pipenv run python setup.py test --addopts --cov"
+            "pipenv run flake8",
+            "pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -62,8 +62,8 @@
             "pip install --upgrade pipenv",
             "pipenv --python 3.5",
             "pipenv install --dev --skip-lock",
-            "pipenv run python setup.py lint",
-            "pipenv run python setup.py test --addopts --cov"
+            "pipenv run flake8",
+            "pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -116,8 +116,8 @@
             "pip install --upgrade pipenv",
             "pipenv --python 3.6",
             "pipenv install --dev --skip-lock",
-            "pipenv run python setup.py lint",
-            "pipenv run python setup.py test --addopts --cov"
+            "pipenv run flake8",
+            "pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -170,8 +170,8 @@
             "pip install --upgrade pipenv",
             "pipenv --python 3.7",
             "pipenv install --dev --skip-lock",
-            "pipenv run python setup.py lint",
-            "pipenv run python setup.py test --addopts --cov"
+            "pipenv run flake8",
+            "pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1

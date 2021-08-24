@@ -7,6 +7,10 @@
   - Specify python version for pipenv
   - Fix flake8-isort errors I003 & I001
 
+### Removed
+
+  - Remove deprecated setuptools entrypoints
+
 ## [0.2.0] - 2019-04-03
 
 ### Added
