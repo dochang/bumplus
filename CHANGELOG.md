@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Python 3.8 & 3.9 support in documentation and pypi classifiers
+
 ## [0.3.0] - 2021-08-24
 
 ### Added
