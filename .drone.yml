@@ -216,6 +216,114 @@
 }
 ---
 {
+   "kind": "pipeline",
+   "name": "python3.8",
+   "steps": [
+      {
+         "commands": [
+            "pip install --upgrade pipenv",
+            "pipenv --python 3.8",
+            "pipenv install --dev --skip-lock",
+            "pipenv run flake8",
+            "pipenv run pytest"
+         ],
+         "environment": {
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "image": "python:3.8",
+         "name": "test",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      },
+      {
+         "commands": [
+            "pip install --upgrade pipenv",
+            "pipenv run codecov"
+         ],
+         "environment": {
+            "CODECOV_TOKEN": {
+               "from_secret": "codecov-upload-token"
+            },
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "failure": "ignore",
+         "image": "python:3.8",
+         "name": "codecov",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      }
+   ],
+   "volumes": [
+      {
+         "name": "pip-cache",
+         "temp": { }
+      }
+   ]
+}
+---
+{
+   "kind": "pipeline",
+   "name": "python3.9",
+   "steps": [
+      {
+         "commands": [
+            "pip install --upgrade pipenv",
+            "pipenv --python 3.9",
+            "pipenv install --dev --skip-lock",
+            "pipenv run flake8",
+            "pipenv run pytest"
+         ],
+         "environment": {
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "image": "python:3.9",
+         "name": "test",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      },
+      {
+         "commands": [
+            "pip install --upgrade pipenv",
+            "pipenv run codecov"
+         ],
+         "environment": {
+            "CODECOV_TOKEN": {
+               "from_secret": "codecov-upload-token"
+            },
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "failure": "ignore",
+         "image": "python:3.9",
+         "name": "codecov",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      }
+   ],
+   "volumes": [
+      {
+         "name": "pip-cache",
+         "temp": { }
+      }
+   ]
+}
+---
+{
    "data": "9ooebQakEh6XD6G3L3yvCTKKQ9pxdI8cpPMfGweOOmThfG1EEygi8uZSaAmxTGKxRgrT8qgqkSFyv7edrRAkIw==",
    "kind": "secret",
    "name": "codecov-upload-token"

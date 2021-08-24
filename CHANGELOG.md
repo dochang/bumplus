@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Test for Python 3.8 & 3.9
+
 ### Fixed
 
   - Specify python version for pipenv
