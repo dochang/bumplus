@@ -28,7 +28,7 @@ jobs:
           path: ~/.cache/pip
           key: pip-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/Pipfile') }}
           restore-keys: |
-            pip-${{ runner.os }}-${{ matrix.python-version }}
+            pip-${{ runner.os }}-${{ matrix.python-version }}-
             pip-${{ runner.os }}-
             pip-
       - name: Install dependencies
@@ -37,7 +37,7 @@ jobs:
           pip install --upgrade pipenv
           pipenv --python ${{ matrix.python-version }}
           pipenv install --dev --skip-lock
-          # It seemds that `pipenv lock` does not understand markers.  We have
+          # It seems that `pipenv lock` does not understand markers.  We have
           # to `--skip-lock`.
       - name: Lint
         run: |

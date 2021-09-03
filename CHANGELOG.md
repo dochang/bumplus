@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+  - Restore keys of Github Actions cache
+
 ## [0.3.1] - 2021-08-24
 
 ### Added
