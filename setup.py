@@ -65,12 +65,14 @@ class UploadCommand(Command):
 
 description = "Bump the version in the project files."
 
-with codecs.open("README.rst", encoding="utf-8") as f:
-    long_description = re.sub(r"\`(.*)\<#.*\>\`\_", r"\1", f.read())
+with codecs.open("README.rst", encoding="utf-8") as readme_reader:
+    long_description = re.sub(
+        r"\`(.*)\<#.*\>\`\_", r"\1", readme_reader.read()
+    )
 
 about = {}
-with open(os.path.join("bumplus", "version.py")) as f:
-    exec(f.read(), about)
+with open(os.path.join("bumplus", "version.py")) as version_reader:
+    exec(version_reader.read(), about)
 
 setup(
     name="bumplus",
