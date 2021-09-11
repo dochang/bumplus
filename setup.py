@@ -10,7 +10,7 @@ from shutil import rmtree
 
 from setuptools import Command, setup
 
-from .bumplus.version import __version__
+from bumplus.version import __version__
 
 __metaclass__ = type
 
