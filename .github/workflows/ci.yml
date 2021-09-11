@@ -4,8 +4,36 @@ on:
 env:
   PIPENV_VENV_IN_PROJECT: 1
 jobs:
+  mega-linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Mega-Linter
+      - name: Mega-Linter
+        id: ml
+        # You can override Mega-Linter flavor used to have faster performances
+        # More info at https://nvuillam.github.io/mega-linter/flavors/
+        uses: nvuillam/mega-linter/flavors/python@v4
+        env:
+          # All available variables are described in documentation
+          # https://nvuillam.github.io/mega-linter/configuration/
+          VALIDATE_ALL_CODEBASE: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Upload Mega-Linter artifacts
+      - name: Archive production artifacts
+        if: ${{ success() }} || ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: Mega-Linter reports
+          path: |
+            report
+            mega-linter.log
+
   test:
     runs-on: ubuntu-latest
+    needs: mega-linter
     strategy:
       fail-fast: false
       matrix:

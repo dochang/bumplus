@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+  - Lint project by Mega-Linter
+
 ## [0.3.2] - 2021-09-03
 
 ### Fixed
