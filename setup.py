@@ -25,7 +25,11 @@ def status(s):
 
 class CleanCommand(Command):
     description = "Clean caches"
-    user_options = []
+    user_options = []  # type: list[tuple[str, str, str]]
+    # Use builtin types
+    #
+    # https://stackoverflow.com/a/62033243
+    # https://www.python.org/dev/peps/pep-0585/
 
     def initialize_options(self):
         pass
