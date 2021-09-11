@@ -10,6 +10,8 @@ from shutil import rmtree
 
 from setuptools import Command, setup
 
+from .bumplus.version import __version__
+
 __metaclass__ = type
 
 
@@ -51,13 +53,9 @@ with codecs.open("README.rst", encoding="utf-8") as readme_reader:
         r"\`(.*)\<#.*\>\`\_", r"\1", readme_reader.read()
     )
 
-about = {}
-with open(os.path.join("bumplus", "version.py")) as version_reader:
-    exec(version_reader.read(), about)
-
 setup(
     name="bumplus",
-    version=about["__version__"],
+    version=__version__,
     url="https://github.com/dochang/bumplus",
     author="Wade Zhang",
     author_email="dochang@gmail.com",
