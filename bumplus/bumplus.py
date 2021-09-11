@@ -23,7 +23,7 @@ class Bumplus(object):
         check_bumplus_dir(path)
         self.path = path
         self.load_config()
-        self.template_env = jinja2.Environment()
+        self.template_env = jinja2.Environment(autoescape=True)
         self.template_env.filters.update(filters)
 
     def load_config(self):
