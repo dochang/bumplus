@@ -7,7 +7,6 @@ import os
 import re
 import sys
 from shutil import rmtree
-from subprocess import call
 
 from setuptools import Command, setup
 
@@ -45,24 +44,6 @@ class CleanCommand(Command):
         sys.exit()
 
 
-class UploadCommand(Command):
-    description = "Publish the package"
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        status("Uploading the package to PyPI via twine...")
-        cmd = ["twine", "upload"]
-        pkgs = glob.glob("dist/*")
-        cmd.extend(pkgs)
-        sys.exit(call(cmd))
-
-
 description = "Bump the version in the project files."
 
 with codecs.open("README.rst", encoding="utf-8") as readme_reader:
@@ -96,5 +77,5 @@ setup(
     packages=["bumplus"],
     entry_points={"console_scripts": ["bumplus = bumplus:main"]},
     install_requires=["pytoml", "Jinja2"],
-    cmdclass={"clean": CleanCommand, "upload": UploadCommand},
+    cmdclass={"clean": CleanCommand},
 )
