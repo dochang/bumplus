@@ -1,5 +1,9 @@
 version = "0.3.2"
 
+[[files."setup.py"]]
+search = "{{old_version}}"
+replace = "{{new_version}}"
+
 [[files."bumplus/version.py"]]
 search = "{{old_version}}"
 replace = "{{new_version}}"

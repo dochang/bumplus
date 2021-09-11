@@ -10,9 +10,9 @@ from shutil import rmtree
 
 from setuptools import Command, setup
 
-from bumplus.version import __version__
-
 __metaclass__ = type
+
+__version__ = "0.3.2"
 
 
 here = os.path.abspath(os.path.dirname(__file__))
