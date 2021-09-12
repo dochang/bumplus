@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Install & run pipenv by pipx
+
+### Removed
+
+- Python 2.7 & 3.5 support
+
 ## [0.4.0] - 2021-09-12
 
 ### Added

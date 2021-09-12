@@ -21,129 +21,17 @@
       "Mega-Linter"
    ],
    "kind": "pipeline",
-   "name": "python2.7",
-   "steps": [
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 2.7",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
-         ],
-         "environment": {
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "image": "python:2.7",
-         "name": "test",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      },
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
-         ],
-         "environment": {
-            "CODECOV_TOKEN": {
-               "from_secret": "codecov-upload-token"
-            },
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "failure": "ignore",
-         "image": "python:2.7",
-         "name": "codecov",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      }
-   ],
-   "volumes": [
-      {
-         "name": "pip-cache",
-         "temp": { }
-      }
-   ]
-}
----
-{
-   "depends_on": [
-      "Mega-Linter"
-   ],
-   "kind": "pipeline",
-   "name": "python3.5",
-   "steps": [
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 3.5",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
-         ],
-         "environment": {
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "image": "python:3.5",
-         "name": "test",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      },
-      {
-         "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
-         ],
-         "environment": {
-            "CODECOV_TOKEN": {
-               "from_secret": "codecov-upload-token"
-            },
-            "PIPENV_VENV_IN_PROJECT": 1
-         },
-         "failure": "ignore",
-         "image": "python:3.5",
-         "name": "codecov",
-         "volumes": [
-            {
-               "name": "pip-cache",
-               "path": "/root/.cache/pip"
-            }
-         ]
-      }
-   ],
-   "volumes": [
-      {
-         "name": "pip-cache",
-         "temp": { }
-      }
-   ]
-}
----
-{
-   "depends_on": [
-      "Mega-Linter"
-   ],
-   "kind": "pipeline",
    "name": "python3.6",
    "steps": [
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 3.6",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv --python 3.6",
+            "python -m pipx run pipenv install --dev --skip-lock",
+            "python -m pipx run pipenv run flake8",
+            "python -m pipx run pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -159,8 +47,10 @@
       },
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv run codecov"
          ],
          "environment": {
             "CODECOV_TOKEN": {
@@ -196,11 +86,13 @@
    "steps": [
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 3.7",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv --python 3.7",
+            "python -m pipx run pipenv install --dev --skip-lock",
+            "python -m pipx run pipenv run flake8",
+            "python -m pipx run pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -216,8 +108,10 @@
       },
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv run codecov"
          ],
          "environment": {
             "CODECOV_TOKEN": {
@@ -253,11 +147,13 @@
    "steps": [
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 3.8",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv --python 3.8",
+            "python -m pipx run pipenv install --dev --skip-lock",
+            "python -m pipx run pipenv run flake8",
+            "python -m pipx run pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -273,8 +169,10 @@
       },
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv run codecov"
          ],
          "environment": {
             "CODECOV_TOKEN": {
@@ -310,11 +208,13 @@
    "steps": [
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv --python 3.9",
-            "pipenv install --dev --skip-lock",
-            "pipenv run flake8",
-            "pipenv run pytest"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv --python 3.9",
+            "python -m pipx run pipenv install --dev --skip-lock",
+            "python -m pipx run pipenv run flake8",
+            "python -m pipx run pipenv run pytest"
          ],
          "environment": {
             "PIPENV_VENV_IN_PROJECT": 1
@@ -330,8 +230,10 @@
       },
       {
          "commands": [
-            "pip install --upgrade pipenv",
-            "pipenv run codecov"
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv run codecov"
          ],
          "environment": {
             "CODECOV_TOKEN": {
