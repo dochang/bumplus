@@ -75,7 +75,7 @@ local test_in_py(py_ver) = {
       DEFAULT_WORKSPACE: '/drone/src',
     },
   },
-] + std.map(test_in_py, ['2.7', '3.5', '3.6', '3.7', '3.8', '3.9']) + [
+] + std.map(test_in_py, ['3.6', '3.7', '3.8', '3.9']) + [
   {
     kind: 'secret',
     name: 'codecov-upload-token',
