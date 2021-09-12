@@ -9,6 +9,7 @@
 ### Changed
 
 - Install & run pipenv by pipx
+- GitHub Actions workflow does not fail when the codecov step fails
 
 ### Removed
 

@@ -83,3 +83,4 @@ jobs:
           python -m pipx run pipenv run codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        continue-on-error: true
