@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Python 3.8 & 3.9 support for Tox
+
 ### Changed
 
 - Install & run pipenv by pipx
