@@ -1,0 +1,8 @@
+assert_used:
+  skips: ['**/*_test.py', '**/test_*.py']
+# TODO: Replace it with `LINTER_DEFAULT`
+#
+# Bandit in Mega-Linter has not yet supported `pyproject.toml`.
+#
+# https://github.com/PyCQA/bandit/commit/44f5c416cc0b7d62ca55b78e90bd1f7ee3d16082
+# https://github.com/PyCQA/bandit/pull/401

@@ -7,11 +7,12 @@ import os
 import re
 import sys
 from shutil import rmtree
-from subprocess import call
 
 from setuptools import Command, setup
 
 __metaclass__ = type
+
+__version__ = "0.3.2"
 
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -24,7 +25,11 @@ def status(s):
 
 class CleanCommand(Command):
     description = "Clean caches"
-    user_options = []
+    user_options = []  # type: list[tuple[str, str, str]]
+    # Use builtin types
+    #
+    # https://stackoverflow.com/a/62033243
+    # https://www.python.org/dev/peps/pep-0585/
 
     def initialize_options(self):
         pass
@@ -45,36 +50,16 @@ class CleanCommand(Command):
         sys.exit()
 
 
-class UploadCommand(Command):
-    description = "Publish the package"
-    user_options = []
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        status("Uploading the package to PyPI via twine...")
-        cmd = ["twine", "upload"]
-        pkgs = glob.glob("dist/*")
-        cmd.extend(pkgs)
-        sys.exit(call(cmd))
-
-
 description = "Bump the version in the project files."
 
-with codecs.open("README.rst", encoding="utf-8") as f:
-    long_description = re.sub(r"\`(.*)\<#.*\>\`\_", r"\1", f.read())
-
-about = {}
-with open(os.path.join("bumplus", "version.py")) as f:
-    exec(f.read(), about)
+with codecs.open("README.rst", encoding="utf-8") as readme_reader:
+    long_description = re.sub(
+        r"\`(.*)\<#.*\>\`\_", r"\1", readme_reader.read()
+    )
 
 setup(
     name="bumplus",
-    version=about["__version__"],
+    version=__version__,
     url="https://github.com/dochang/bumplus",
     author="Wade Zhang",
     author_email="dochang@gmail.com",
@@ -94,5 +79,5 @@ setup(
     packages=["bumplus"],
     entry_points={"console_scripts": ["bumplus = bumplus:main"]},
     install_requires=["pytoml", "Jinja2"],
-    cmdclass={"clean": CleanCommand, "upload": UploadCommand},
+    cmdclass={"clean": CleanCommand},
 )

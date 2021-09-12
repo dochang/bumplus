@@ -52,9 +52,30 @@ local test_in_py(py_ver) = {
       temp: {},
     },
   ],
+
+  depends_on: [
+    'Mega-Linter',
+  ],
 };
 
-std.map(test_in_py, ['2.7', '3.5', '3.6', '3.7', '3.8', '3.9']) + [
+[
+  {
+    kind: 'pipeline',
+    name: 'Mega-Linter',
+    workspace: {
+      path: '/drone/src',
+    },
+    steps: [
+      {
+        name: 'Lint',
+        image: 'nvuillam/mega-linter-python:v4',
+      },
+    ],
+    environment: {
+      DEFAULT_WORKSPACE: '/drone/src',
+    },
+  },
+] + std.map(test_in_py, ['2.7', '3.5', '3.6', '3.7', '3.8', '3.9']) + [
   {
     kind: 'secret',
     name: 'codecov-upload-token',
