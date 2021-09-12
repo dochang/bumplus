@@ -169,6 +169,11 @@
 
 - Initial release
 
+<!-- markdown-link-check-disable -->
+
+<!-- Skip checking the links status because the CHANGELOG is always updated
+before the tag is created -->
+
 [Unreleased]: https://github.com/dochang/bumplus/compare/0.3.2...HEAD
 [0.3.2]: https://github.com/dochang/bumplus/compare/0.3.1...0.3.2
 [0.3.1]: https://github.com/dochang/bumplus/compare/0.3.0...0.3.1
@@ -190,6 +195,8 @@
 [0.0.3]: https://github.com/dochang/bumplus/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/dochang/bumplus/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/dochang/bumplus/commits/0.0.1
+
+<!-- markdown-link-check-enable -->
 
 <!-- markdownlint-configure-file
 {
