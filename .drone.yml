@@ -17,9 +17,6 @@
 }
 ---
 {
-   "depends_on": [
-      "Mega-Linter"
-   ],
    "kind": "pipeline",
    "name": "python3.6",
    "steps": [
@@ -78,9 +75,6 @@
 }
 ---
 {
-   "depends_on": [
-      "Mega-Linter"
-   ],
    "kind": "pipeline",
    "name": "python3.7",
    "steps": [
@@ -139,9 +133,6 @@
 }
 ---
 {
-   "depends_on": [
-      "Mega-Linter"
-   ],
    "kind": "pipeline",
    "name": "python3.8",
    "steps": [
@@ -200,9 +191,6 @@
 }
 ---
 {
-   "depends_on": [
-      "Mega-Linter"
-   ],
    "kind": "pipeline",
    "name": "python3.9",
    "steps": [

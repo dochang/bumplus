@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Run CI jobs/pipelines in parallel
+
 ## [0.5.0] - 2021-09-12
 
 ### Added

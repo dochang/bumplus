@@ -56,10 +56,6 @@ local test_in_py(py_ver) = {
       temp: {},
     },
   ],
-
-  depends_on: [
-    'Mega-Linter',
-  ],
 };
 
 [
