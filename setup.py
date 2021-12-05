@@ -12,7 +12,7 @@ from setuptools import Command, setup
 
 __metaclass__ = type
 
-__version__ = "0.5.1"
+__version__ = "0.6.0"
 
 
 here = os.path.abspath(os.path.dirname(__file__))
