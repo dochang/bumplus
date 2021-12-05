@@ -73,6 +73,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
     packages=["bumplus"],
     entry_points={"console_scripts": ["bumplus = bumplus:main"]},

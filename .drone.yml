@@ -249,6 +249,64 @@
 }
 ---
 {
+   "kind": "pipeline",
+   "name": "python3.10",
+   "steps": [
+      {
+         "commands": [
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv --python 3.10",
+            "python -m pipx run pipenv install --dev --skip-lock",
+            "python -m pipx run pipenv run flake8",
+            "python -m pipx run pipenv run pytest"
+         ],
+         "environment": {
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "image": "python:3.10",
+         "name": "test",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      },
+      {
+         "commands": [
+            "python -m pip install --upgrade pip",
+            "python -m pip install --upgrade pipx",
+            "python -m pipx ensurepath",
+            "python -m pipx run pipenv run codecov"
+         ],
+         "environment": {
+            "CODECOV_TOKEN": {
+               "from_secret": "codecov-upload-token"
+            },
+            "PIPENV_VENV_IN_PROJECT": 1
+         },
+         "failure": "ignore",
+         "image": "python:3.10",
+         "name": "codecov",
+         "volumes": [
+            {
+               "name": "pip-cache",
+               "path": "/root/.cache/pip"
+            }
+         ]
+      }
+   ],
+   "volumes": [
+      {
+         "name": "pip-cache",
+         "temp": { }
+      }
+   ]
+}
+---
+{
    "data": "9ooebQakEh6XD6G3L3yvCTKKQ9pxdI8cpPMfGweOOmThfG1EEygi8uZSaAmxTGKxRgrT8qgqkSFyv7edrRAkIw==",
    "kind": "secret",
    "name": "codecov-upload-token"
