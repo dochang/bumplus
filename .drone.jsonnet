@@ -68,7 +68,7 @@ local test_in_py(py_ver) = {
     steps: [
       {
         name: 'Lint',
-        image: 'nvuillam/mega-linter-python:v4',
+        image: 'megalinter/megalinter-python:v5',
       },
     ],
     environment: {
