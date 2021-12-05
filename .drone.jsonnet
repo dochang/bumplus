@@ -19,24 +19,24 @@ local test_in_py(py_ver) = {
     base_step(py_ver) + {
       name: 'test',
       commands: [
-        'python -m pip install --upgrade pip',
-        'python -m pip install --upgrade pipx',
-        'python -m pipx ensurepath',
-        'python -m pipx run pipenv --python %s' % py_ver,
-        'python -m pipx run pipenv install --dev --skip-lock',
+        'python3 -m pip install --upgrade pip',
+        'python3 -m pip install --upgrade pipx',
+        'python3 -m pipx ensurepath',
+        'python3 -m pipx run pipenv --python %s' % py_ver,
+        'python3 -m pipx run pipenv install --dev --skip-lock',
         // It seems that `pipenv lock` does not understand markers.  We have to
         // `--skip-lock`.
-        'python -m pipx run pipenv run flake8',
-        'python -m pipx run pipenv run pytest',
+        'python3 -m pipx run pipenv run flake8',
+        'python3 -m pipx run pipenv run pytest',
       ],
     },
     base_step(py_ver) + {
       name: 'codecov',
       commands: [
-        'python -m pip install --upgrade pip',
-        'python -m pip install --upgrade pipx',
-        'python -m pipx ensurepath',
-        'python -m pipx run pipenv run codecov',
+        'python3 -m pip install --upgrade pip',
+        'python3 -m pip install --upgrade pipx',
+        'python3 -m pipx ensurepath',
+        'python3 -m pipx run pipenv run codecov',
       ],
       failure: 'ignore',
       // https://discourse.drone.io/t/how-to-allow-failure-of-an-individual-step/3499

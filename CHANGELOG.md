@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Ensure that python3 is invoked
+
 ## [0.6.0] - 2021-12-05
 
 ### Added
