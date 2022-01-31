@@ -5,6 +5,7 @@
 ### Changed
 
 - Add pipenv scripts
+- Set `long_description_content_type` explicitly for `setup.py`
 
 ## [0.6.1] - 2021-12-05
 
