@@ -142,3 +142,9 @@ jobs:
           python3 -m pipx run pipenv run clean
           python3 -m pipx run pipenv run package
           python3 -m pipx run pipenv run check-package
+
+      - name: Publish to PyPI
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN }}
