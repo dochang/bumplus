@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add bumplus itself into dev-dependencies
+
 ### Changed
 
 - Add pipenv scripts

@@ -18,6 +18,7 @@ isort = { version = "*", extras = [
 ], markers = "python_version >= '3.4'" }
 flake8-isort = { version = "*", markers = "python_version >= '3.4'" }
 flake8-bugbear = { version = "*", markers = "python_version >= '3.5'" }
+bumplus = "*"
 
 [packages]
 "e1839a8" = { path = ".", editable = true }
