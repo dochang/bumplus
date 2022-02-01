@@ -1,24 +1,30 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
-
 [dev-packages]
-
 pytest = "*"
 pytest-cov = "*"
 codecov = "*"
 twine = "*"
 tox = "*"
 "flake8" = "*"
-flake8-black = {version = "*",markers = "python_version >= '3.6'"}
-isort = {version = "*",extras = ["requirements", "pipfile", "pyproject"],markers = "python_version >= '3.4'"}
-flake8-isort = {version = "*",markers = "python_version >= '3.4'"}
-flake8-bugbear = {version = "*",markers = "python_version >= '3.5'"}
-
+flake8-black = { version = "*", markers = "python_version >= '3.6'" }
+isort = { version = "*", extras = [
+  "requirements",
+  "pipfile",
+  "pyproject"
+], markers = "python_version >= '3.4'" }
+flake8-isort = { version = "*", markers = "python_version >= '3.4'" }
+flake8-bugbear = { version = "*", markers = "python_version >= '3.5'" }
 
 [packages]
+"e1839a8" = { path = ".", editable = true }
 
-"e1839a8" = {path = ".", editable = true}
+[scripts]
+package = 'python3 setup.py sdist bdist_wheel --universal'
+clean = 'python3 setup.py clean'
+check-package = 'twine check dist/*'
+publish = 'twine upload dist/*'
+test-publish = 'twine upload --repository-url https://test.pypi.org/legacy/ dist/*'

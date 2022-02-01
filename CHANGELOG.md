@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Add pipenv scripts
+
 ## [0.6.1] - 2021-12-05
 
 ### Changed
