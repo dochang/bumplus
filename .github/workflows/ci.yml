@@ -1,8 +1,6 @@
 name: CI
 on:
   - push
-env:
-  PIPENV_VENV_IN_PROJECT: 1
 jobs:
   mega-linter:
     runs-on: ubuntu-latest
@@ -59,6 +57,16 @@ jobs:
             pip-${{ runner.os }}-${{ matrix.python-version }}-
             pip-${{ runner.os }}-
             pip-
+
+      - name: Cache pipenv
+        uses: actions/cache@v2
+        with:
+          path: ~/.local/share/virtualenvs
+          key: pipenv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/Pipfile') }}
+          restore-keys: |
+            pipenv-${{ runner.os }}-${{ matrix.python-version }}-
+            pipenv-${{ runner.os }}-
+            pipenv-
 
       - name: Install dependencies
         run: |
