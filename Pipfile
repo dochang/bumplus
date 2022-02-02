@@ -26,7 +26,7 @@ invoke = "*"
 
 [scripts]
 package = 'python3 setup.py sdist bdist_wheel --universal'
-clean = 'python3 setup.py clean'
+clean = 'invoke clean'
 check-package = 'twine check dist/*'
 publish = 'twine upload dist/*'
 test-publish = 'twine upload --repository-url https://test.pypi.org/legacy/ dist/*'

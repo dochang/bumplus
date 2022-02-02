@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Replace `setup.py` tasks with pyinvoke tasks
+
 ## [0.7.0] - 2022-02-01
 
 ### Added
