@@ -5,6 +5,7 @@
 ### Changed
 
 - Replace `setup.py` tasks with pyinvoke tasks
+- Migrate `setup.py` to `setup.cfg`
 
 ## [0.7.0] - 2022-02-01
 
