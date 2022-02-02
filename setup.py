@@ -1,14 +1,10 @@
 from __future__ import absolute_import, division, print_function
 
 import codecs
-import glob
-import itertools
 import os
 import re
-import sys
-from shutil import rmtree
 
-from setuptools import Command, setup
+from setuptools import setup
 
 __metaclass__ = type
 
@@ -17,38 +13,6 @@ __version__ = "0.7.0"
 
 here = os.path.abspath(os.path.dirname(__file__))
 os.chdir(here)
-
-
-def status(s):
-    print("\033[1m{0}\033[0m".format(s))
-
-
-class CleanCommand(Command):
-    description = "Clean caches"
-    user_options = []  # type: list[tuple[str, str, str]]
-    # Use builtin types
-    #
-    # https://stackoverflow.com/a/62033243
-    # https://www.python.org/dev/peps/pep-0585/
-
-    def initialize_options(self):
-        pass
-
-    def finalize_options(self):
-        pass
-
-    def run(self):
-        status("Removing previous builds...")
-        patterns = ("build", "dist", "*.egg", "*.egg-info")
-        iglobs = (glob.iglob(pattern) for pattern in patterns)
-        for d in itertools.chain.from_iterable(iglobs):
-            try:
-                rmtree(d)
-            except Exception:
-                if os.path.exists(d):
-                    raise
-        sys.exit()
-
 
 description = "Bump the version in the project files."
 
@@ -79,5 +43,4 @@ setup(
     packages=["bumplus"],
     entry_points={"console_scripts": ["bumplus = bumplus:main"]},
     install_requires=["pytoml", "Jinja2"],
-    cmdclass={"clean": CleanCommand},
 )
