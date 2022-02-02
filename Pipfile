@@ -20,12 +20,13 @@ flake8-isort = { version = "*", markers = "python_version >= '3.4'" }
 flake8-bugbear = { version = "*", markers = "python_version >= '3.5'" }
 bumplus = "*"
 invoke = "*"
+build = "*"
 
 [packages]
 "e1839a8" = { path = ".", editable = true }
 
 [scripts]
-package = 'python3 setup.py sdist bdist_wheel --universal'
+package = 'python3 -m build'
 clean = 'invoke clean'
 check-package = 'twine check dist/*'
 publish = 'twine upload dist/*'

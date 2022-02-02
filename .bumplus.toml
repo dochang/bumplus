@@ -1,5 +1,9 @@
 version = "0.7.0"
 
+[[files."setup.cfg"]]
+search = "{{old_version}}"
+replace = "{{new_version}}"
+
 [[files."bumplus/version.py"]]
 search = "{{old_version}}"
 replace = "{{new_version}}"
