@@ -5,10 +5,11 @@ local base_step(py_ver) = {
       name: 'pip-cache',
       path: '/root/.cache/pip',
     },
+    {
+      name: 'pipenv-cache',
+      path: '/root/.local/share/virtualenvs',
+    },
   ],
-  environment: {
-    PIPENV_VENV_IN_PROJECT: 1,
-  },
 };
 
 local test_in_py(py_ver) = {
@@ -26,8 +27,8 @@ local test_in_py(py_ver) = {
         'python3 -m pipx run pipenv install --dev --skip-lock',
         // It seems that `pipenv lock` does not understand markers.  We have to
         // `--skip-lock`.
-        'python3 -m pipx run pipenv run flake8',
-        'python3 -m pipx run pipenv run pytest',
+        'python3 -m pipx run pipenv run lint',
+        'python3 -m pipx run pipenv run test',
       ],
     },
     base_step(py_ver) + {
@@ -42,7 +43,6 @@ local test_in_py(py_ver) = {
       // https://discourse.drone.io/t/how-to-allow-failure-of-an-individual-step/3499
       // https://github.com/drone/drone/issues/1920#issuecomment-436837486
       environment: {
-        PIPENV_VENV_IN_PROJECT: 1,
         CODECOV_TOKEN: {
           from_secret: 'codecov-upload-token',
         },
@@ -53,6 +53,10 @@ local test_in_py(py_ver) = {
   volumes: [
     {
       name: 'pip-cache',
+      temp: {},
+    },
+    {
+      name: 'pipenv-cache',
       temp: {},
     },
   ],
@@ -76,6 +80,55 @@ local test_in_py(py_ver) = {
     },
   },
 ] + std.map(test_in_py, ['3.6', '3.7', '3.8', '3.9', '3.10']) + [
+  {
+    kind: 'pipeline',
+    name: 'Package',
+
+    steps: [
+      {
+        name: 'Package',
+        image: 'python:3',
+        commands: [
+          'python3 -m pip install --upgrade pip',
+          'python3 -m pip install --upgrade pipx',
+          'python3 -m pipx ensurepath',
+          'python3 -m pipx run pipenv --three',
+          'python3 -m pipx run pipenv install --dev --skip-lock',
+          // It seems that `pipenv lock` does not understand markers.  We have
+          // to `--skip-lock`.
+          'python3 -m pipx run pipenv run clean',
+          'python3 -m pipx run pipenv run package',
+          'python3 -m pipx run pipenv run check-package',
+        ],
+        volumes: [
+          {
+            name: 'pip-cache',
+            path: '/root/.cache/pip',
+          },
+          {
+            name: 'pipenv-cache',
+            path: '/root/.local/share/virtualenvs',
+          },
+        ],
+      },
+    ],
+
+    volumes: [
+      {
+        name: 'pip-cache',
+        temp: {},
+      },
+      {
+        name: 'pipenv-cache',
+        temp: {},
+      },
+    ],
+
+    depends_on: [
+      'Mega-Linter',
+    ] + ['python3.%s' % v for v in std.range(6, 10)],
+  },
+
   {
     kind: 'secret',
     name: 'codecov-upload-token',
