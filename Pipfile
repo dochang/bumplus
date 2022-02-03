@@ -21,6 +21,7 @@ flake8-bugbear = { version = "*", markers = "python_version >= '3.5'" }
 bumplus = "*"
 invoke = "*"
 build = "*"
+flit = "*"
 
 [packages]
 "e1839a8" = { path = ".", editable = true }
