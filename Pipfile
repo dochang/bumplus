@@ -26,6 +26,8 @@ build = "*"
 "e1839a8" = { path = ".", editable = true }
 
 [scripts]
+lint = 'python3 -m flake8'
+test = 'python3 -m pytest'
 package = 'python3 -m build'
 clean = 'invoke clean'
 check-package = 'twine check dist/*'

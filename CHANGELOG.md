@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- More pipenv scripts
+
 ### Changed
 
 - Replace `setup.py` tasks with pyinvoke tasks

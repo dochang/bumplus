@@ -80,11 +80,11 @@ jobs:
 
       - name: Lint
         run: |
-          python3 -m pipx run pipenv run python3 -m flake8
+          python3 -m pipx run pipenv run lint
 
       - name: Test
         run: |
-          python3 -m pipx run pipenv run python3 -m pytest
+          python3 -m pipx run pipenv run test
 
       - name: Upload Coverage Report
         run: |
