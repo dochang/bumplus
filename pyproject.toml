@@ -16,5 +16,33 @@ addopts = "--cov"
 skips = ['**/*_test.py', '**/test_*.py']
 
 [build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "bumplus"
+authors = [{ name = "Wade Zhang", email = "dochang@gmail.com" }]
+readme = "README.rst"
+license = { file = "LICENSE" }
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.6",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Operating System :: OS Independent",
+]
+dynamic = ["version", "description"]
+requires-python = '>=3.6'
+dependencies = ["pytoml", "Jinja2"]
+
+[project.urls]
+Home = "https://github.com/dochang/bumplus"
+Source = "https://github.com/dochang/bumplus"
+"Issue Tracker" = "https://github.com/dochang/bumplus/issues"
+
+[project.scripts]
+bumplus = "bumplus:main"

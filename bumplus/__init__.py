@@ -1,3 +1,6 @@
+"""Bump the version in the project files."""
+
+
 from __future__ import absolute_import, division, print_function
 
 from .bumplus import Bumplus
