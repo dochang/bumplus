@@ -1,6 +1,6 @@
 version = "0.7.0"
 
-[[files."setup.py"]]
+[[files."setup.cfg"]]
 search = "{{old_version}}"
 replace = "{{new_version}}"
 

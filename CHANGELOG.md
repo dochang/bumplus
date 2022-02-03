@@ -5,6 +5,8 @@
 ### Changed
 
 - Replace `setup.py` tasks with pyinvoke tasks
+- Migrate `setup.py` to `setup.cfg`
+- Migrate to PEP-517 & PEP-518
 
 ## [0.7.0] - 2022-02-01
 
