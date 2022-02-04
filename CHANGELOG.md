@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Absence of the LICENSE file
+
 ## [0.8.0] - 2022-02-03
 
 ### Added
