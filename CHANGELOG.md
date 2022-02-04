@@ -6,6 +6,10 @@
 
 - Absence of the LICENSE file
 
+### Removed
+
+- Python 3.6 support
+
 ## [0.8.0] - 2022-02-03
 
 ### Added

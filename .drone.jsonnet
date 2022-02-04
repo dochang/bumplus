@@ -79,7 +79,7 @@ local test_in_py(py_ver) = {
       DEFAULT_WORKSPACE: '/drone/src',
     },
   },
-] + std.map(test_in_py, ['3.6', '3.7', '3.8', '3.9', '3.10']) + [
+] + std.map(test_in_py, ['3.7', '3.8', '3.9', '3.10']) + [
   {
     kind: 'pipeline',
     name: 'Package',
@@ -126,7 +126,7 @@ local test_in_py(py_ver) = {
 
     depends_on: [
       'Mega-Linter',
-    ] + ['python3.%s' % v for v in std.range(6, 10)],
+    ] + ['python3.%s' % v for v in std.range(7, 10)],
   },
 
   {
