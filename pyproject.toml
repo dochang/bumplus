@@ -18,3 +18,12 @@ skips = ['**/*_test.py', '**/test_*.py']
 [build-system]
 requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+  "import-error",
+]
+
+[tool.pyright]
+reportMissingImports = false
+reportMissingModuleSource = false
