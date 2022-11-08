@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Upgrade to MegaLinter v6
+
 ## [0.9.0] - 2022-02-04
 
 ### Fixed

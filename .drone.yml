@@ -7,7 +7,7 @@
    "name": "Mega-Linter",
    "steps": [
       {
-         "image": "megalinter/megalinter-python:v5",
+         "image": "oxsecurity/megalinter-python:v6",
          "name": "Lint"
       }
    ],
