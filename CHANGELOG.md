@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Python 3.11 support
+
 ### Changed
 
 - Upgrade to MegaLinter v6
