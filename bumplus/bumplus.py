@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+"""Module of main class for Bumplus."""
 from __future__ import absolute_import, division, print_function
 
 import logging
@@ -19,7 +20,14 @@ logger = logging.getLogger(__package__)
 
 
 class Bumplus(object):
+    """Bumplus main class."""
+
     def __init__(self, path):
+        """Initialize Bumplus.
+
+        :param path:
+            Top-level directory which contains Bumplus config file.
+        """
         check_bumplus_dir(path)
         self.path = path
         self.load_config()
@@ -27,9 +35,17 @@ class Bumplus(object):
         self.template_env.filters.update(filters)
 
     def load_config(self):
+        """Load config."""
         self.config = load_config(bumplus_conf_file(self.path))
 
     def replace_file(self, fname, file_config_list):
+        """Replace patterns in the file.
+
+        :param fname:
+            Name of the file.
+        :param file_config_list:
+            A list of patterns.
+        """
         path = os.path.join(self.path, fname)
         with open(path) as f:
             content_after = content_before = f.read()
@@ -45,6 +61,7 @@ class Bumplus(object):
                 f.write(content_after)
 
     def bump_version(self, new_version):
+        """Bump current version to the new version."""
         if self.config["version"] == new_version:
             return
         self.context = {

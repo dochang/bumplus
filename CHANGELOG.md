@@ -5,6 +5,7 @@
 ### Added
 
 - Python 3.11 support
+- Docstrings
 
 ### Changed
 
