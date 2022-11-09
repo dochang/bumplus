@@ -7,8 +7,6 @@ from .constants import CONF_FILE
 class BumplusError(Exception):
     """Base Bumplus exception."""
 
-    pass
-
 
 class NotBumplusDir(BumplusError):
     """Exception raised when Bumplus config file does not exist."""
