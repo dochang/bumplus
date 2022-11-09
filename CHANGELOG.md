@@ -16,6 +16,10 @@
 
 - Python 2 compatibility code
 
+### Fixed
+
+- Lint errors
+
 ## [0.9.0] - 2022-02-04
 
 ### Fixed
