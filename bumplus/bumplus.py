@@ -35,9 +35,11 @@ class Bumplus:
         """Load config."""
         self.config = load_config(bumplus_conf_file(self.path))
 
-    def replace_file(self, fname, file_config_list):
+    def replace_file(self, tmpl_vars, fname, file_config_list):
         """Replace patterns in the file.
 
+        :param tmpl_vars:
+            Template variables.
         :param fname:
             Name of the file.
         :param file_config_list:
@@ -49,9 +51,9 @@ class Bumplus:
         for file_config in file_config_list:
             tenv = self.template_env
             search_tmpl = tenv.from_string(file_config["search"])
-            search = search_tmpl.render(self.context)
+            search = search_tmpl.render(tmpl_vars)
             replace_tmpl = tenv.from_string(file_config["replace"])
-            replace = replace_tmpl.render(self.context)
+            replace = replace_tmpl.render(tmpl_vars)
             content_after = content_after.replace(search, replace)
         if content_before != content_after:
             with open(path, mode="w", encoding="utf-8") as f:
@@ -61,15 +63,16 @@ class Bumplus:
         """Bump current version to the new version."""
         if self.config["version"] == new_version:
             return
-        self.context = {
+        tmpl_vars = {
             "old_version": self.config["version"],
             "new_version": new_version,
             "now": datetime.now(),
             "utcnow": datetime.utcnow(),
         }
         for fname in self.config["files"]:
-            self.replace_file(fname, self.config["files"][fname])
+            self.replace_file(tmpl_vars, fname, self.config["files"][fname])
         self.replace_file(
+            tmpl_vars,
             CONF_FILE,
             [{"search": "{{old_version}}", "replace": "{{new_version}}"}],
         )
