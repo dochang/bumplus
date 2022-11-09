@@ -44,7 +44,7 @@ class Bumplus:
             A list of patterns.
         """
         path = os.path.join(self.path, fname)
-        with open(path) as f:
+        with open(path, encoding="utf-8") as f:
             content_after = content_before = f.read()
         for file_config in file_config_list:
             tenv = self.template_env
@@ -54,7 +54,7 @@ class Bumplus:
             replace = replace_tmpl.render(self.context)
             content_after = content_after.replace(search, replace)
         if content_before != content_after:
-            with open(path, "w") as f:
+            with open(path, mode="w", encoding="utf-8") as f:
                 f.write(content_after)
 
     def bump_version(self, new_version):

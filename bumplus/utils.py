@@ -30,7 +30,7 @@ def load_config(fname):
 
     If ``version`` is not defined, an exception will be raised.
     """
-    with open(fname) as f:
+    with open(fname, encoding="utf-8") as f:
         config = pytoml.load(f)
     if "version" not in config:
         raise VersionNotDefined()
@@ -44,5 +44,5 @@ def dump_config(config, fname):
     """
     if "version" not in config:
         raise VersionNotDefined()
-    with open(fname, "w") as f:
+    with open(fname, mode="w", encoding="utf-8") as f:
         return pytoml.dump(f, config)
