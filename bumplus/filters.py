@@ -1,8 +1,6 @@
 """Template filters."""
 from __future__ import absolute_import, division, print_function
 
-__metaclass__ = type
-
 
 def strftime(value, format="%x"):
     """Template filter to format data and time.

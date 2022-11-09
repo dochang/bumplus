@@ -13,9 +13,6 @@ from .constants import CONF_FILE
 from .filters import filters
 from .utils import bumplus_conf_file, check_bumplus_dir, load_config
 
-__metaclass__ = type
-
-
 logger = logging.getLogger(__package__)
 
 

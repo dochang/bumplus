@@ -10,8 +10,6 @@ import pytest
 
 import bumplus
 
-__metaclass__ = type
-
 
 class TestCLI:
     def test_not_bumplus_dir(self, tmpdir):

@@ -10,9 +10,6 @@ from .errors import NotBumplusDir
 from .utils import is_bumplus_dir
 from .version import __version__
 
-__metaclass__ = type
-
-
 logger = logging.getLogger(__package__)
 
 

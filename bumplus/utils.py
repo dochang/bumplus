@@ -8,8 +8,6 @@ import pytoml
 from .constants import CONF_FILE
 from .errors import NotBumplusDir, VersionNotDefined
 
-__metaclass__ = type
-
 
 def bumplus_conf_file(dirname):
     """Return the path of Bumplus config file in DIRNAME."""

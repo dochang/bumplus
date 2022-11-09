@@ -12,6 +12,10 @@
 - Upgrade to MegaLinter v6
 - Upgrade Github actions
 
+### Removed
+
+- Python 2 compatibility code
+
 ## [0.9.0] - 2022-02-04
 
 ### Fixed
