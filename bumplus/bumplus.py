@@ -16,7 +16,7 @@ from .utils import bumplus_conf_file, check_bumplus_dir, load_config
 logger = logging.getLogger(__package__)
 
 
-class Bumplus(object):
+class Bumplus:
     """Bumplus main class."""
 
     def __init__(self, path):
