@@ -14,7 +14,7 @@ class NotBumplusDir(BumplusError):
     def __init__(self):
         """Initialize exception."""
         msg = f"Could not find {CONF_FILE}"
-        super(NotBumplusDir, self).__init__(msg)
+        super().__init__(msg)
 
 
 class VersionNotDefined(BumplusError):
@@ -23,4 +23,4 @@ class VersionNotDefined(BumplusError):
     def __init__(self):
         """Initialize exception."""
         msg = "Version not defined"
-        super(VersionNotDefined, self).__init__(msg)
+        super().__init__(msg)
