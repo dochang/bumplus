@@ -24,6 +24,15 @@ disable = [
   "import-error",
 ]
 
+[tool.pylint."BASIC"]
+good-names-rgxs = "[_A-Za-z_][_A-Za-z0-9]?"
+# https://pylint.pycqa.org/en/latest/user_guide/configuration/all-options.html#good-names-rgxs
+# https://github.com/PyCQA/pylint/pull/3186
+# https://github.com/PyCQA/pylint/issues/3086
+# https://github.com/PyCQA/pylint/issues/2970
+# https://github.com/PyCQA/pylint/issues/2018
+# https://stackoverflow.com/a/66784120
+
 [tool.pyright]
 reportMissingImports = false
 reportMissingModuleSource = false
