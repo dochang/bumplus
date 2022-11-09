@@ -15,7 +15,7 @@ class NotBumplusDir(BumplusError):
 
     def __init__(self):
         """Initialize exception."""
-        msg = "Could not find {0}".format(CONF_FILE)
+        msg = f"Could not find {CONF_FILE}"
         super(NotBumplusDir, self).__init__(msg)
 
 

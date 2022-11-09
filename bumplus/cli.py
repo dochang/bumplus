@@ -36,7 +36,7 @@ def main(argv=None):
     parser.add_argument(
         "--version",
         action="version",
-        version="%(prog)s {0}".format(__version__),
+        version=f"%(prog)s {__version__}",
         help="Display bumplus version",
     )
     parser.add_argument(
