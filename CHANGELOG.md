@@ -5,11 +5,20 @@
 ### Added
 
 - Python 3.11 support
+- Docstrings
 
 ### Changed
 
 - Upgrade to MegaLinter v6
 - Upgrade Github actions
+
+### Removed
+
+- Python 2 compatibility code
+
+### Fixed
+
+- Lint errors
 
 ## [0.9.0] - 2022-02-04
 

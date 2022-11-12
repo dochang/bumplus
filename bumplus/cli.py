@@ -1,3 +1,4 @@
+"""Entry for cli."""
 from __future__ import absolute_import, division, print_function
 
 import argparse
@@ -9,17 +10,16 @@ from .errors import NotBumplusDir
 from .utils import is_bumplus_dir
 from .version import __version__
 
-__metaclass__ = type
-
-
 logger = logging.getLogger(__package__)
 
 
 def is_fs_root(path):
+    """Check whether path is the root."""
     return path == "/"
 
 
 def find_bumplus_topdir(path):
+    """Find the top-level directory which contains Bumplus config file."""
     found = is_bumplus_dir(path)
     while not found and not is_fs_root(path):
         path = os.path.normpath(os.path.join(path, ".."))
@@ -30,12 +30,13 @@ def find_bumplus_topdir(path):
 
 
 def main(argv=None):
+    """Entry for cli."""
     parser = argparse.ArgumentParser(description="Bump version.")
     parser.add_argument("new_version", help="New version")
     parser.add_argument(
         "--version",
         action="version",
-        version="%(prog)s {0}".format(__version__),
+        version=f"%(prog)s {__version__}",
         help="Display bumplus version",
     )
     parser.add_argument(

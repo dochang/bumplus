@@ -1,3 +1,7 @@
+# pylint: disable=missing-module-docstring
+# pylint: disable=missing-class-docstring
+# pylint: disable=missing-function-docstring
+
 from __future__ import absolute_import, division, print_function
 
 from textwrap import dedent
@@ -5,8 +9,6 @@ from textwrap import dedent
 import pytest
 
 import bumplus
-
-__metaclass__ = type
 
 
 class TestClass:
