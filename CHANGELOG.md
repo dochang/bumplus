@@ -19,6 +19,7 @@
 ### Fixed
 
 - Lint errors
+- Tox configuration
 
 ## [0.9.0] - 2022-02-04
 
