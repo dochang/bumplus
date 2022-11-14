@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Github actions
+
 ## [0.10.0] - 2022-11-14
 
 ### Added
