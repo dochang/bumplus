@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.10.1] - 2022-11-14
+
 ### Fixed
 
 - Github actions
@@ -272,7 +274,8 @@
 <!-- Skip checking the links status because the CHANGELOG is always updated
 before the tag is created -->
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.10.0...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.10.1...HEAD
+[0.10.1]: https://github.com/dochang/bumplus/compare/0.10.0...0.10.1
 [0.10.0]: https://github.com/dochang/bumplus/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/dochang/bumplus/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/dochang/bumplus/compare/0.7.0...0.8.0
