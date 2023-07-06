@@ -6,6 +6,10 @@
 
 - Test code style
 
+### Removed
+
+- Drone CI configuration
+
 ## [0.10.1] - 2022-11-14
 
 ### Fixed

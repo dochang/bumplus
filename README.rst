@@ -6,10 +6,6 @@
    :target: https://github.com/dochang/bumplus/actions/workflows/ci.yml
    :alt: CI
 
-.. image:: https://cloud.drone.io/api/badges/dochang/bumplus/status.svg
-   :target: https://cloud.drone.io/dochang/bumplus
-   :alt: Build Status
-
 .. image:: https://codecov.io/gh/dochang/bumplus/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/dochang/bumplus
    :alt: Codecov
