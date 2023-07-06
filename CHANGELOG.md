@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Test code style
+
 ## [0.10.1] - 2022-11-14
 
 ### Fixed

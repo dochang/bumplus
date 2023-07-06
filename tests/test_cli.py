@@ -48,7 +48,6 @@ class TestCLI:
         )
 
     def test_bump_version_multi_line(self, tmpdir):
-
         tmpdir.chdir()
         tmpdir.join(".bumplus.toml").write(
             dedent(
@@ -79,7 +78,6 @@ class TestCLI:
         )
 
     def test_bump_version_multi_pattern(self, tmpdir):
-
         tmpdir.chdir()
         tmpdir.join(".bumplus.toml").write(
             dedent(
@@ -163,7 +161,6 @@ class TestCLI:
         )
 
     def test_bump_version_multi_file(self, tmpdir):
-
         tmpdir.chdir()
         tmpdir.join(".bumplus.toml").write(
             dedent(
