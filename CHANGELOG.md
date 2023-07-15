@@ -9,6 +9,7 @@
 ### Removed
 
 - Drone CI configuration
+- Python 3.7 support
 
 ## [0.10.1] - 2022-11-14
 
