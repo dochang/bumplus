@@ -1,0 +1,68 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@2.1.1
+
+jobs:
+  Mega-Linter:
+    environment:
+      DEFAULT_WORKSPACE: /root/project
+    docker:
+      - image: oxsecurity/megalinter-go:v7
+        # checkov:skip=CKV_CIRCLECIPIPELINES_2:prefer mutable but stable tags
+    steps:
+      - checkout
+      - run:
+          command: |
+            sh /entrypoint.sh
+      - store_artifacts:
+          path: megalinter-reports
+  test:
+    parameters:
+      python-version:
+        type: string
+    executor:
+      name: python/default
+      tag: << parameters.python-version >>
+    steps:
+      - checkout
+      - run:
+          command: |
+            pipenv --python << parameters.python-version >>
+      - python/install-packages:
+          pkg-manager: pipenv
+          args: "--dev"
+      - run:
+          name: lint
+          command: |
+            pipenv run lint
+      - run:
+          name: test
+          command: |
+            pipenv run test
+      - run:
+          name: packaging test
+          command: |
+            set +e
+            pipenv run clean
+            pipenv run package
+            pipenv run check-package
+        # Figure out which versions of Python work well with Invoke, since
+        # Invoke may not work with recent Python releases.
+        #
+        # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1293148106
+        # https://github.com/pyinvoke/invoke/pull/458
+        # https://github.com/pyinvoke/invoke/pull/606
+
+workflows:
+  CI:
+    jobs:
+      - Mega-Linter
+      - test:
+          matrix:
+            parameters:
+              python-version:
+                - "3.8"
+                - "3.9"
+                - "3.10"
+                - "3.11"

@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- CircleCI configuration
+
 ### Fixed
 
 - Test code style
