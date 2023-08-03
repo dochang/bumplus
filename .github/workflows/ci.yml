@@ -78,9 +78,7 @@ jobs:
           python3 -m pip install --upgrade pipx
           python3 -m pipx ensurepath
           python3 -m pipx run pipenv --python ${{ matrix.python-version }}
-          python3 -m pipx run pipenv install --dev --skip-lock
-          # It seems that `pipenv lock` does not understand markers.  We have
-          # to `--skip-lock`.
+          python3 -m pipx run pipenv install --dev
 
       - name: Lint
         run: |
@@ -155,9 +153,7 @@ jobs:
           python3 -m pip install --upgrade pipx
           python3 -m pipx ensurepath
           python3 -m pipx run pipenv --python ${{ steps.setup-python.outputs.python-version }}
-          python3 -m pipx run pipenv install --dev --skip-lock
-          # It seems that `pipenv lock` does not understand markers.  We have
-          # to `--skip-lock`.
+          python3 -m pipx run pipenv install --dev
 
       - name: Package
         run: |
