@@ -6,6 +6,9 @@
    :target: https://github.com/dochang/bumplus/actions/workflows/ci.yml
    :alt: CI
 
+.. image:: https://dl.circleci.com/status-badge/img/gh/dochang/bumplus/tree/master.svg?style=svg
+   :target: https://dl.circleci.com/status-badge/redirect/gh/dochang/bumplus/tree/master
+
 .. image:: https://codecov.io/gh/dochang/bumplus/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/dochang/bumplus
    :alt: Codecov
