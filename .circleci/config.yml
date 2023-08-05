@@ -30,6 +30,8 @@ jobs:
           command: |
             pipenv --python << parameters.python-version >>
       - python/install-packages:
+          cache-version: v1
+          include-python-in-cache-key: true
           pkg-manager: pipenv
           args: "--dev"
       - run:
