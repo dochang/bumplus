@@ -20,9 +20,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.pylint."MESSAGES CONTROL"]
-disable = [
-  "import-error",
-]
+disable = ["import-error"]
 
 [tool.pylint."BASIC"]
 good-names-rgxs = "[_A-Za-z_][_A-Za-z0-9]?"
