@@ -7,6 +7,10 @@
 - CircleCI configuration
 - CircleCI badge
 
+### Changed
+
+- Require Python 3.8.1+
+
 ### Fixed
 
 - Test code style
