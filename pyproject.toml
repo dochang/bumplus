@@ -71,3 +71,12 @@ poethepoet = "^0.22.0"
 
 [tool.poetry.scripts]
 bumplus = "bumplus:main"
+
+[tool.poe.tasks]
+lint = "python3 -m flake8"
+test = "python3 -m pytest"
+package = "python3 -m build"
+clean = "invoke clean"
+check-package = "twine check dist/*"
+publish = "twine upload dist/*"
+test-publish = "twine upload --repository-url https://test.pypi.org/legacy/ dist/*"
