@@ -116,17 +116,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Python 3.10
+      - name: Setup Python 3.11
         id: setup-python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
-
-        # Package with Python 3.10
+          python-version: "3.11"
+        # Package with Python 3.11
         #
-        # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1293148106
-        # https://github.com/pyinvoke/invoke/pull/458
-        # https://github.com/pyinvoke/invoke/pull/606
+        # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1397480677
+        # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1369097355
+        # https://github.com/pyinvoke/invoke/commit/406a45e854f6e8df4aa0de01e3b731fea2b1f1ec
+
       - name: Cache pip
         uses: actions/cache@v3
         with:

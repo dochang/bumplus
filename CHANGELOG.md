@@ -10,6 +10,7 @@
 ### Changed
 
 - Require Python 3.8.1+
+- Build package by Python 3.11
 
 ### Fixed
 
