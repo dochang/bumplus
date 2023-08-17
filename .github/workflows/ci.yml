@@ -47,10 +47,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install poetry
+        run: |
+          python3 -m pipx install poetry
+        # We have to install poetry before `setup-python` if cache is enabled.
+        #
+        # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
+        # https://github.com/actions/setup-python/issues/659
+
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
+          cache: poetry
 
       - name: Install dependencies
         run: |
@@ -97,11 +106,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install poetry
+        run: |
+          python3 -m pipx install poetry
+        # We have to install poetry before `setup-python` if cache is enabled.
+        #
+        # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
+        # https://github.com/actions/setup-python/issues/659
+
       - name: Setup Python 3.11
         id: setup-python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+          cache: poetry
         # Package with Python 3.11
         #
         # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1397480677
