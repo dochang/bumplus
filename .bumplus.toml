@@ -1,9 +1,5 @@
 version = "0.10.1"
 
-[[files."setup.cfg"]]
-search = "{{old_version}}"
-replace = "{{new_version}}"
-
 [[files."bumplus/version.py"]]
 search = "{{old_version}}"
 replace = "{{new_version}}"
@@ -25,4 +21,12 @@ search = """
 replace = """
 [Unreleased]: https://github.com/dochang/bumplus/compare/{{new_version}}...HEAD
 [{{new_version}}]: https://github.com/dochang/bumplus/compare/{{old_version}}...{{new_version}}
+"""
+
+[[files."pyproject.toml"]]
+search = """
+version = \"{{old_version}}\"
+"""
+replace = """
+version = \"{{new_version}}\"
 """
