@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   python: circleci/python@2.1.1
+  codecov: codecov/codecov@3.2.5
 
 jobs:
   Mega-Linter:
@@ -47,11 +48,7 @@ jobs:
           name: test
           command: |
             poetry run poe test
-      - run:
-          name: upload coverage report
-          command: |
-            set +e
-            poetry run codecov
+      - codecov/upload
       - run:
           name: packaging test
           command: |

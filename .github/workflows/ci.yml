@@ -79,11 +79,9 @@ jobs:
           poetry run poe test
 
       - name: Upload Coverage Report
-        run: |
-          poetry run codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        continue-on-error: true
+        uses: codecov/codecov-action@v3
+        with:
+          verbose: true
 
       - name: Packaging Test
         run: |
