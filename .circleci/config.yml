@@ -48,6 +48,11 @@ jobs:
           command: |
             poetry run poe test
       - run:
+          name: upload coverage report
+          command: |
+            set +e
+            poetry run codecov
+      - run:
           name: packaging test
           command: |
             set +e
