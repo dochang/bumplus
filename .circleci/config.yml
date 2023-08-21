@@ -27,28 +27,33 @@ jobs:
     steps:
       - checkout
       - run:
+          name: install poetry
           command: |
-            pipenv --python << parameters.python-version >>
+            python3 -m pip install --upgrade pip
+            python3 -m pip install --upgrade pipx
+            python3 -m pipx ensurepath
+            python3 -m pipx install poetry
+            poetry env use << parameters.python-version >>
       - python/install-packages:
           cache-version: v1
           include-python-in-cache-key: true
-          pkg-manager: pipenv
-          args: "--dev"
+          pkg-manager: poetry
+          args: "--sync"
       - run:
           name: lint
           command: |
-            pipenv run lint
+            poetry run poe lint
       - run:
           name: test
           command: |
-            pipenv run test
+            poetry run poe test
       - run:
           name: packaging test
           command: |
             set +e
-            pipenv run clean
-            pipenv run package
-            pipenv run check-package
+            poetry run poe clean
+            poetry run poe package
+            poetry run poe check-package
         # Figure out which versions of Python work well with Invoke, since
         # Invoke may not work with recent Python releases.
         #

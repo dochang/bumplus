@@ -47,59 +47,49 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install poetry
+        run: |
+          python3 -m pipx install poetry
+        # We have to install poetry before `setup-python` if cache is enabled.
+        #
+        # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
+        # https://github.com/actions/setup-python/issues/659
+
       - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Cache pip
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: pip-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/Pipfile') }}
-          restore-keys: |
-            pip-${{ runner.os }}-${{ matrix.python-version }}-
-            pip-${{ runner.os }}-
-            pip-
-
-      - name: Cache pipenv
-        uses: actions/cache@v3
-        with:
-          path: ~/.local/share/virtualenvs
-          key: pipenv-${{ runner.os }}-${{ matrix.python-version }}-${{ hashFiles('**/Pipfile') }}
-          restore-keys: |
-            pipenv-${{ runner.os }}-${{ matrix.python-version }}-
-            pipenv-${{ runner.os }}-
-            pipenv-
+          cache: poetry
 
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade pipx
           python3 -m pipx ensurepath
-          python3 -m pipx run pipenv --python ${{ matrix.python-version }}
-          python3 -m pipx run pipenv install --dev
+          python3 -m pipx install poetry
+          poetry env use ${{ matrix.python-version }}
+          poetry install --sync
 
       - name: Lint
         run: |
-          python3 -m pipx run pipenv run lint
+          poetry run poe lint
 
       - name: Test
         run: |
-          python3 -m pipx run pipenv run test
+          poetry run poe test
 
       - name: Upload Coverage Report
         run: |
-          python3 -m pipx run pipenv run codecov
+          poetry run codecov
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         continue-on-error: true
 
       - name: Packaging Test
         run: |
-          python3 -m pipx run pipenv run clean
-          python3 -m pipx run pipenv run package
-          python3 -m pipx run pipenv run check-package
+          poetry run poe clean
+          poetry run poe package
+          poetry run poe check-package
         continue-on-error: true
         # Figure out which versions of Python work well with Invoke, since
         # Invoke may not work with recent Python releases.
@@ -116,50 +106,40 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install poetry
+        run: |
+          python3 -m pipx install poetry
+        # We have to install poetry before `setup-python` if cache is enabled.
+        #
+        # https://github.com/actions/setup-python/blob/main/docs/advanced-usage.md#caching-packages
+        # https://github.com/actions/setup-python/issues/659
+
       - name: Setup Python 3.11
         id: setup-python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
+          cache: poetry
         # Package with Python 3.11
         #
         # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1397480677
         # https://github.com/pyinvoke/invoke/issues/833#issuecomment-1369097355
         # https://github.com/pyinvoke/invoke/commit/406a45e854f6e8df4aa0de01e3b731fea2b1f1ec
 
-      - name: Cache pip
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: pip-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/Pipfile') }}
-          restore-keys: |
-            pip-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-
-            pip-${{ runner.os }}-
-            pip-
-
-      - name: Cache pipenv
-        uses: actions/cache@v3
-        with:
-          path: ~/.local/share/virtualenvs
-          key: pipenv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/Pipfile') }}
-          restore-keys: |
-            pipenv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-
-            pipenv-${{ runner.os }}-
-            pipenv-
-
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install --upgrade pipx
           python3 -m pipx ensurepath
-          python3 -m pipx run pipenv --python ${{ steps.setup-python.outputs.python-version }}
-          python3 -m pipx run pipenv install --dev
+          python3 -m pipx install poetry
+          poetry env use ${{ steps.setup-python.outputs.python-version }}
+          poetry install
 
       - name: Package
         run: |
-          python3 -m pipx run pipenv run clean
-          python3 -m pipx run pipenv run package
-          python3 -m pipx run pipenv run check-package
+          poetry run poe clean
+          poetry run poe package
+          poetry run poe check-package
 
       - name: Publish to PyPI
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')

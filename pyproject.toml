@@ -16,8 +16,8 @@ addopts = "--cov"
 skips = ['**/*_test.py', '**/test_*.py']
 
 [build-system]
-requires = ["setuptools>=42", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.pylint."MESSAGES CONTROL"]
 disable = ["import-error"]
@@ -34,3 +34,49 @@ good-names-rgxs = "[_A-Za-z_][_A-Za-z0-9]?"
 [tool.pyright]
 reportMissingImports = false
 reportMissingModuleSource = false
+
+[tool.poetry]
+name = "bumplus"
+version = "0.10.1"
+description = "Bump the version in the project files."
+authors = ["Wade Zhang <dochang@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+homepage = "https://github.com/dochang/bumplus"
+repository = "https://github.com/dochang/bumplus"
+classifiers = ["Operating System :: OS Independent"]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/dochang/bumplus/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+pytoml = "^0.1.21"
+jinja2 = "^3.1.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+codecov = "^2.1.13"
+twine = "^4.0.2"
+tox = "^4.7.0"
+flake8 = "^6.1.0"
+flake8-black = "^0.3.6"
+isort = "^5.12.0"
+flake8-isort = "^6.0.0"
+flake8-bugbear = "^23.7.10"
+invoke = "^2.2.0"
+build = "^0.10.0"
+poethepoet = "^0.22.0"
+
+[tool.poetry.scripts]
+bumplus = "bumplus:main"
+
+[tool.poe.tasks]
+lint = "python3 -m flake8"
+test = "python3 -m pytest"
+package = "python3 -m build"
+clean = "invoke clean"
+check-package = "twine check dist/*"
+publish = "twine upload dist/*"
+test-publish = "twine upload --repository-url https://test.pypi.org/legacy/ dist/*"
