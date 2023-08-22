@@ -54,7 +54,7 @@ jobs:
           command: |
             set +e
             poetry run poe clean
-            poetry run poe package
+            poetry build
             poetry run poe check-package
         # Figure out which versions of Python work well with Invoke, since
         # Invoke may not work with recent Python releases.

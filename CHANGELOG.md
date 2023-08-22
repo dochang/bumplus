@@ -13,6 +13,7 @@
 - Build package by Python 3.11
 - Switch from pipenv to poetry
 - Migrate Codecov uploader
+- Build package by poetry
 
 ### Fixed
 

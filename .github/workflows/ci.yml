@@ -86,7 +86,7 @@ jobs:
       - name: Packaging Test
         run: |
           poetry run poe clean
-          poetry run poe package
+          poetry build
           poetry run poe check-package
         continue-on-error: true
         # Figure out which versions of Python work well with Invoke, since
@@ -136,7 +136,7 @@ jobs:
       - name: Package
         run: |
           poetry run poe clean
-          poetry run poe package
+          poetry build
           poetry run poe check-package
 
       - name: Publish to PyPI
