@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.11.0] - 2023-08-23
+
 ### Added
 
 - CircleCI configuration
@@ -296,7 +298,8 @@
 <!-- Skip checking the links status because the CHANGELOG is always updated
 before the tag is created -->
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.10.1...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.11.0...HEAD
+[0.11.0]: https://github.com/dochang/bumplus/compare/0.10.1...0.11.0
 [0.10.1]: https://github.com/dochang/bumplus/compare/0.10.0...0.10.1
 [0.10.0]: https://github.com/dochang/bumplus/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/dochang/bumplus/compare/0.8.0...0.9.0
