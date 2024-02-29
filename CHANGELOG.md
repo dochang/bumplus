@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [0.12.0] - 2024-02-29
+
 ### Added
 
 - Python 3.12 support
@@ -307,7 +309,8 @@
 <!-- Skip checking the links status because the CHANGELOG is always updated
 before the tag is created -->
 
-[Unreleased]: https://github.com/dochang/bumplus/compare/0.11.0...HEAD
+[Unreleased]: https://github.com/dochang/bumplus/compare/0.12.0...HEAD
+[0.12.0]: https://github.com/dochang/bumplus/compare/0.11.0...0.12.0
 [0.11.0]: https://github.com/dochang/bumplus/compare/0.10.1...0.11.0
 [0.10.1]: https://github.com/dochang/bumplus/compare/0.10.0...0.10.1
 [0.10.0]: https://github.com/dochang/bumplus/compare/0.9.0...0.10.0

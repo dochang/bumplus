@@ -37,7 +37,7 @@ reportMissingModuleSource = false
 
 [tool.poetry]
 name = "bumplus"
-version = "0.11.0"
+version = "0.12.0"
 description = "Bump the version in the project files."
 authors = ["Wade Zhang <dochang@gmail.com>"]
 license = "MIT"
