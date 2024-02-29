@@ -9,6 +9,7 @@
 ### Changed
 
 - Reformat code
+- Build package by Python 3.12
 
 ## [0.11.0] - 2023-08-23
 
