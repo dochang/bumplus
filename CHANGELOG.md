@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Reformat code
+
 ## [0.11.0] - 2023-08-23
 
 ### Added
