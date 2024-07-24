@@ -5,7 +5,7 @@ from __future__ import absolute_import, division, print_function
 
 import logging
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 import jinja2
 
@@ -67,7 +67,7 @@ class Bumplus:
             "old_version": self.config["version"],
             "new_version": new_version,
             "now": datetime.now(),
-            "utcnow": datetime.utcnow(),
+            "utcnow": datetime.now(timezone.utc),
         }
         for fname in self.config["files"]:
             self.replace_file(tmpl_vars, fname, self.config["files"][fname])

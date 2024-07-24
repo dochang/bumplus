@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Deprecated classmethod `datetime.utcnow`
+
 ## [0.12.0] - 2024-02-29
 
 ### Added
