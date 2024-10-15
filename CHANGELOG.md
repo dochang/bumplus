@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- Instruction of installing by `pipx`
+
 ### Fixed
 
 - Deprecated classmethod `datetime.utcnow`
