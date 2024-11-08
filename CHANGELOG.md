@@ -7,6 +7,10 @@
 - Instruction of installing by `pipx`
 - Python 3.13 support
 
+### Changed
+
+- Build package by Python 3.13
+
 ### Fixed
 
 - Deprecated classmethod `datetime.utcnow`
