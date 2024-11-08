@@ -5,6 +5,7 @@
 ### Added
 
 - Instruction of installing by `pipx`
+- Python 3.13 support
 
 ### Fixed
 

@@ -54,7 +54,7 @@ Bumplus is a command line tool to bump your project version.
  Prerequisites
 ***************
 
-Python 3.9, 3.10, 3.11, 3.12
+Python 3.9, 3.10, 3.11, 3.12, 3.13
 
 **************
  Installation
