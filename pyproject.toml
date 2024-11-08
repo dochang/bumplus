@@ -50,7 +50,7 @@ classifiers = ["Operating System :: OS Independent"]
 "Bug Tracker" = "https://github.com/dochang/bumplus/issues"
 
 [tool.poetry.dependencies]
-python = "^3.8.1"
+python = "^3.9.0"
 pytoml = "^0.1.21"
 jinja2 = "^3.1.2"
 

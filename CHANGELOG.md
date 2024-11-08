@@ -10,6 +10,10 @@
 
 - Deprecated classmethod `datetime.utcnow`
 
+### Removed
+
+- Python 3.8 support
+
 ## [0.12.0] - 2024-02-29
 
 ### Added
