@@ -2,3 +2,5 @@
 
 [flake8]
 exclude = .git,__pycache__,.tox,.eggs,*.egg,build,.venv
+extend-exclude = .cci_pycache
+# Exclude .cci_pycache on CircleCI
