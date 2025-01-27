@@ -14,6 +14,7 @@
 ### Fixed
 
 - Deprecated classmethod `datetime.utcnow`
+- Wrong MegaLinter Docker image
 
 ### Removed
 
