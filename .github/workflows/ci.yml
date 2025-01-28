@@ -74,7 +74,7 @@ jobs:
           python3 -m pipx ensurepath
           python3 -m pipx install poetry
           poetry env use ${{ matrix.python-version }}
-          poetry install --sync
+          poetry install
 
       - name: Lint
         run: |

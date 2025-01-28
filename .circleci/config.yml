@@ -29,7 +29,6 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
-          args: "--sync"
       - run:
           name: lint
           command: |
