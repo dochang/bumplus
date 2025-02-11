@@ -5,7 +5,7 @@ orbs:
   codecov: codecov/codecov@5.2.0
 
 jobs:
-  Mega-Linter:
+  MegaLinter:
     docker:
       - image: oxsecurity/megalinter-python:v8
         # checkov:skip=CKV_CIRCLECIPIPELINES_2:prefer mutable but stable tags
@@ -59,7 +59,7 @@ jobs:
 workflows:
   CI:
     jobs:
-      - Mega-Linter
+      - MegaLinter
       - test:
           matrix:
             parameters:
