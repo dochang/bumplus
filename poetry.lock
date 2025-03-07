@@ -89,7 +89,7 @@ name = "build"
 version = "1.2.2.post1"
 description = "A simple, correct Python build frontend"
 optional = false
-python-versions = ">= 3.8"
+python-versions = ">=3.8"
 groups = ["dev"]
 files = [
     {file = "build-1.2.2.post1-py3-none-any.whl", hash = "sha256:1d61c0887fa860c01971625baae8bdd338e517b836a2f70dd1f7aa3a6b2fc5b5"},
@@ -544,14 +544,14 @@ typing = ["typing-extensions (>=4.12.2)"]
 
 [[package]]
 name = "flake8"
-version = "7.1.1"
+version = "7.1.2"
 description = "the modular source code checker: pep8 pyflakes and co"
 optional = false
 python-versions = ">=3.8.1"
 groups = ["dev"]
 files = [
-    {file = "flake8-7.1.1-py2.py3-none-any.whl", hash = "sha256:597477df7860daa5aa0fdd84bf5208a043ab96b8e96ab708770ae0364dd03213"},
-    {file = "flake8-7.1.1.tar.gz", hash = "sha256:049d058491e228e03e67b390f311bbf88fce2dbaa8fa673e7aea87b7198b8d38"},
+    {file = "flake8-7.1.2-py2.py3-none-any.whl", hash = "sha256:1cbc62e65536f65e6d754dfe6f1bada7f5cf392d6f5db3c2b85892466c3e7c1a"},
+    {file = "flake8-7.1.2.tar.gz", hash = "sha256:c586ffd0b41540951ae41af572e6790dbd49fc12b3aa2541685d253d9bd504bd"},
 ]
 
 [package.dependencies]
@@ -703,14 +703,14 @@ files = [
 
 [[package]]
 name = "isort"
-version = "6.0.0"
+version = "6.0.1"
 description = "A Python utility / library to sort Python imports."
 optional = false
 python-versions = ">=3.9.0"
 groups = ["dev"]
 files = [
-    {file = "isort-6.0.0-py3-none-any.whl", hash = "sha256:567954102bb47bb12e0fae62606570faacddd441e45683968c8d1734fb1af892"},
-    {file = "isort-6.0.0.tar.gz", hash = "sha256:75d9d8a1438a9432a7d7b54f2d3b45cad9a4a0fdba43617d9873379704a8bdf1"},
+    {file = "isort-6.0.1-py3-none-any.whl", hash = "sha256:2dc5d7f65c9678d94c88dfc29161a320eec67328bc97aad576874cb4be1e9615"},
+    {file = "isort-6.0.1.tar.gz", hash = "sha256:1cb5df28dfbc742e490c5e41bad6da41b805b0a8be7bc93cd0fb2a8a890ac450"},
 ]
 
 [package.extras]
@@ -1097,14 +1097,14 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "poethepoet"
-version = "0.32.2"
+version = "0.33.0"
 description = "A task runner that works well with poetry."
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "poethepoet-0.32.2-py3-none-any.whl", hash = "sha256:97e165de8e00b07d33fd8d72896fad8b20ccafcd327b1118bb6a3da26af38d33"},
-    {file = "poethepoet-0.32.2.tar.gz", hash = "sha256:1d68871dac1b191e27bd68fea57d0e01e9afbba3fcd01dbe6f6bc3fcb071fe4c"},
+    {file = "poethepoet-0.33.0-py3-none-any.whl", hash = "sha256:46a32ea9834666a13e0a7bbfa2562037c8d9a46df5cf032b9de1fbb3de372c6e"},
+    {file = "poethepoet-0.33.0.tar.gz", hash = "sha256:dccf2bc1fb67ae9051b4aea7515687a34628338e013e723f60e59e41d3630c07"},
 ]
 
 [package.dependencies]
@@ -1201,14 +1201,14 @@ files = [
 
 [[package]]
 name = "pytest"
-version = "8.3.4"
+version = "8.3.5"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.8"
 groups = ["dev"]
 files = [
-    {file = "pytest-8.3.4-py3-none-any.whl", hash = "sha256:50e16d954148559c9a74109af1eaf0c945ba2d8f30f0a3d3335edde19788b6f6"},
-    {file = "pytest-8.3.4.tar.gz", hash = "sha256:965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761"},
+    {file = "pytest-8.3.5-py3-none-any.whl", hash = "sha256:c69214aa47deac29fad6c2a4f590b9c4a9fdb16a403176fe154b79c0b4d4d820"},
+    {file = "pytest-8.3.5.tar.gz", hash = "sha256:f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"},
 ]
 
 [package.dependencies]
@@ -1483,18 +1483,18 @@ files = [
 
 [[package]]
 name = "tox"
-version = "4.24.1"
+version = "4.24.2"
 description = "tox is a generic virtualenv management and test command line tool"
 optional = false
 python-versions = ">=3.8"
 groups = ["dev"]
 files = [
-    {file = "tox-4.24.1-py3-none-any.whl", hash = "sha256:57ba7df7d199002c6df8c2db9e6484f3de6ca8f42013c083ea2d4d1e5c6bdc75"},
-    {file = "tox-4.24.1.tar.gz", hash = "sha256:083a720adbc6166fff0b7d1df9d154f9d00bfccb9403b8abf6bc0ee435d6a62e"},
+    {file = "tox-4.24.2-py3-none-any.whl", hash = "sha256:92e8290e76ad4e15748860a205865696409a2d014eedeb796a34a0f3b5e7336e"},
+    {file = "tox-4.24.2.tar.gz", hash = "sha256:d5948b350f76fae436d6545a5e87c2b676ab7a0d7d88c1308651245eadbe8aea"},
 ]
 
 [package.dependencies]
-cachetools = ">=5.5"
+cachetools = ">=5.5.1"
 chardet = ">=5.2"
 colorama = ">=0.4.6"
 filelock = ">=3.16.1"
@@ -1502,12 +1502,12 @@ packaging = ">=24.2"
 platformdirs = ">=4.3.6"
 pluggy = ">=1.5"
 pyproject-api = ">=1.8"
-tomli = {version = ">=2.1", markers = "python_version < \"3.11\""}
+tomli = {version = ">=2.2.1", markers = "python_version < \"3.11\""}
 typing-extensions = {version = ">=4.12.2", markers = "python_version < \"3.11\""}
-virtualenv = ">=20.27.1"
+virtualenv = ">=20.29.1"
 
 [package.extras]
-test = ["devpi-process (>=1.0.2)", "pytest (>=8.3.3)", "pytest-mock (>=3.14)"]
+test = ["devpi-process (>=1.0.2)", "pytest (>=8.3.4)", "pytest-mock (>=3.14)"]
 
 [[package]]
 name = "twine"
