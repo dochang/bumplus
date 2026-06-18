@@ -15,7 +15,7 @@ jobs:
       # For GitHub Comment Reporter
       # https://megalinter.io/latest/reporters/GitHubCommentReporter/
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # MegaLinter
       - name: MegaLinter
@@ -60,7 +60,7 @@ jobs:
           - "3.12"
           - "3.13"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install poetry
         run: |
@@ -119,7 +119,7 @@ jobs:
       - mega-linter
       - test
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install poetry
         run: |
